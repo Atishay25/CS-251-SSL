@@ -1,0 +1,25 @@
+Name 	    : Atishay Jain
+Roll Number : 210050026
+CS 251 - Inlab 4
+
+References   :
+
+https://www.overleaf.com/learn/latex/Hyperlinks
+
+https://www.resurchify.com/latex_tutorial/latex_hyperlinks.php
+
+https://www-users.york.ac.uk/~pjh503/LaTeX/formatting.html#:~:text=way%20using%20%5Craggedright%20.-,Right,a%20different%20way%20using%20%5Craggedleft%20.
+
+https://www.overleaf.com/learn/latex/Aligning_equations_with_amsmath
+
+https://tex.stackexchange.com/questions/147570/how-to-indent-equations
+
+https://tex.stackexchange.com/questions/248814/how-do-i-get-the-table-of-contents-to-just-include-the-sections-and-subsection-i
+
+http://www.emerson.emory.edu/services/latex/latex_119.html
+
+https://latex-beamer.com/tutorials/table-of-contents/
+
+https://tex.stackexchange.com/questions/13423/how-to-change-the-color-of-href-links-for-real
+
+https://tex.stackexchange.com/questions/248814/how-do-i-get-the-table-of-contents-to-just-include-the-sections-and-subsection-i

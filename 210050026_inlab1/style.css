@@ -1,0 +1,72 @@
+p{
+    color:rgb(9, 83, 29);
+    margin-left: 2vw;
+}
+
+b{
+    margin-left: 2vw;
+}
+
+.stuff{
+    margin-left: 2vw;
+    margin-top: 3vh;
+}
+
+.Buttons{
+    margin-bottom: 10vh;
+}
+
+.bluebutton{
+    margin-left: 2vw;
+    color: blue;
+    background-color: rgb(7, 239, 243);
+    border-radius: 10px;
+    width: 100px;
+    height: 50px;
+    margin-right: 5vh;
+    font-family:'Times New Roman', Times, serif;
+    font-size: x-large;
+    box-shadow: 3px 3px;
+}
+
+.bluebutton:hover{
+    background-color: rgb(230, 232, 235);
+}
+
+.redbutton:hover{
+    background-color: rgb(230, 232, 235);
+}
+
+.redbutton{
+    color:red;
+    background-color: rgb(228, 148, 173);
+    border-radius: 10px;
+    width: 100px;
+    height: 50px;
+    font-size: x-large;
+    font-family:'Times New Roman', Times, serif;
+    box-shadow: 3px 3px;
+}
+
+.inputbox{
+    margin-top: 1vh;
+    margin-bottom: 3vh;
+    width: 45vw;
+    height: 4vh;
+    margin-left: 2vw;
+}
+
+.submit{
+    font-size: large;
+    margin-left: 2vw;
+    background-color: gold;
+    border-radius: 10px;
+    width: 100px;
+    height: 50px;
+    font-family:'Times New Roman', Times, serif;
+    box-shadow: 3px 3px;
+}
+
+.submit:hover{
+    font-style: italic;
+}

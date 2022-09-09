@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Bungee+Shade&family=Cherry+Swash:wght@400;700&family=Frijole&family=Ibarra+Real+Nova:wght@700&family=Poppins:wght@400;500;600;700&family=Rye&family=Ubuntu:wght@400;500;700&display=swap');
+
+body{
+    background: burlywood;
+    /*display: flex;
+    flex-direction: column ;
+    justify-content:  center;
+    align-items: center;
+    align-content: center;
+    /*background: rgb(25,28,28);
+    background: linear-gradient(90deg, rgb(115, 202, 202) 0%, rgb(241, 103, 61) 46%, rgba(255,248,152,1) 99%);*/
+    background: rgb(238, 238, 238);
+}
+
+.bg{
+    background: url("images/rm222batch2-mind-03.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1{
+    text-align: center;
+}
+
+
+/*Bootstrap navbar styling*/
+
+#navbar{
+    background-color: rgb(11, 149, 224) !important;
+    opacity: 90%;
+}
+
+.main{
+    margin-top: 2.1cm;
+}
+
+.navbar-brand{
+    font-size: 36px;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    font-family: 'Ibarra Real Nova', serif;
+    margin-left: 0.5cm;
+}
+
+.nav-item{
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 3vw;
+}
+
+/*Home Page Styling*/
+
+#intro{
+    text-align: center;
+    font-size: 20px;
+    color: black;
+    padding-top: 15vh;
+    align-items: center;
+    justify-content: center;
+}
+
+#myself{
+    border-radius: 50%;
+    position: relative;
+    float: left;
+    height: 495px;
+    width: 430px;
+    display: flex;
+}
+
+.pushpa{
+    height: auto;
+    width: auto;
+}
+
+.mycard{
+    height: 320px;
+    width: 50%;
+    border-radius: 25px;
+    background-color: rgb(48, 231, 255);
+    margin-right: 45vw;
+}
+
+.carousel{
+    width: fit-content ;
+}
+
+.itsme:hover{
+    opacity: 0.8 !important;
+}
+
+.itsmetxt{
+    font-size: 2em;
+    font-weight: 400;
+}
+
+.itsme > * {
+    transform: translateY(20px);
+    transition: transform 0.5s;
+}
+
+.itsme{
+    transition: opacity 0.8s;
+    opacity: 0;
+    backdrop-filter: blur(1.75px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Time Table*/
+
+.table{
+    border: 6px solid rgb(1, 42, 146);
+}
+
+td{
+    border:3px solid black;
+}
+
+#timeimage{
+    background: url(images/time.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    min-height: 500px;
+    background-position: 50% 50%;
+    display: flex;
+    justify-content: center;
+    align-items: right;
+    background-size: cover;
+    height: 700px;
+    font-size: xx-large;
+}
+
+.timeheading{
+    margin-right: 56vw;
+    margin-top: 8vh;
+    font-size: 56px;
+    font-weight: 550;
+    font-family: 'Rye', cursive;
+}
+
+/*Social Media Footer*/
+
+.myaccounts{
+    display: flex;
+    flex-direction: column;
+    width: 2em;
+    height: 2em;
+    background-color: aliceblue;
+
+}
+
+/*Hobbies*/
+
+.hobbies{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.hobbiesform{
+    font-size: 0.56cm;
+    font-weight: 500;
+    padding: 1 em;
+    
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+    align-content: center;
+}
+
+.hobbies_txt{
+    background-attachment: fixed;
+    background-position: fixed;
+}
+
+.sporthobby{
+    background: url(images/cricket_image.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    min-height: 500px;
+    background-position: 50% 50%;
+    display: flex;
+    background-size: cover;
+    height: 800px;
+}
+
+.hobbiescard{
+    height: auto;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+    align-content: center;
+}
+
+#submitbtn{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 3em auto;
+    align-items: center;
+    align-content: center;
+    box-shadow: 0.5ex 0.5ex rgb(99, 211, 245);
+}
+
+#submitbtn:hover{
+    font-size: 22px;
+}
+
+/*Contact me*/
+
+.mail{
+    height: 5em;
+    padding-top: 1em;
+}
+
+.contact{
+    margin-top: 1.5cm;
+    margin-bottom: 1.5cm;
+}
+
+/*footer*/
+
+.myfooter{
+    background-color: rgb(11, 149, 224) !important;
+    opacity: 90%;
+}
+
+/*Education*/
+
+#eduimage{
+    background: url(images/element5-digital-OyCl7Y4y0Bk-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    min-height: 500px;
+    background-position: 50% 50%;
+    display: flex;
+    justify-content: center;
+    align-items: right;
+    background-size: cover;
+    height: 700px;
+    font-size: xx-large;
+}
+
+.eduheading{
+    margin-left: 2cm;
+    margin-top: 8vh;
+    font-size: 70px;
+    font-weight: 550;
+    font-family: 'Rye', cursive;
+}
+
+/*Projects*/
+
+.projects{
+    margin-top: 3cm;
+}
+

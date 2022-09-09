@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for file in $( git diff --cached --name-only ); do
+    firstLine=$( head -1 $file )
+    if [ "$firstLine" = "DO NOT COMMIT YET" ]; then
+        git restore --staged $file
+    fi
+done
+
+exit 0

@@ -1,0 +1,20 @@
+for changing color on clicking on blue/red button:
+https://bobbyhadz.com/blog/javascript-change-text-color-on-click
+
+bootstrap on paragraph text:
+https://getbootstrap.com/docs/4.0/content/typography/
+
+https://www.w3schools.com/cssref/sel_hover.asp
+https://www.w3schools.com/jsref/event_onclick.asp
+
+https://www.w3schools.com/html/
+https://developer.mozilla.org/en-US/docs/Web/HTML
+
+https://www.w3schools.com/css/
+https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started
+
+https://getbootstrap.com/docs/5.2/getting-started/introduction/
+
+https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics
+
+https://www.tabnine.com/academy/javascript/get-value-of-input/

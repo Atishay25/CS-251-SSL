@@ -1,0 +1,23 @@
+#!/bin/bash
+
+zeroes="0000000000000000000000000000000000000000"
+
+remote="$1"
+url="$2"
+
+while read local_ref local_sha remote_ref remote_sha
+do
+    if [ "$remote_sha" = "$zeroes" ]
+    then 
+       Branch=$(git symbolic-ref --short HEAD)
+       firstCommitMessage="Create $Branch"
+
+       BranchCommitMessage=$(git log master..$Branch --oneline | tail -1 | awk '{ print $2 }')
+
+       if [ "$CommitBranchMessage" = "$firstCommitMessage" ];
+       then 
+          exit 0
+       fi 
+    fi 
+done
+exit 1	

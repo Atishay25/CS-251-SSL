@@ -1,0 +1,35 @@
+Name        : Atishay Jain
+Roll Number : 210050026
+
+References :
+https://www.redhat.com/sysadmin/manipulating-text-sed
+
+https://www.kofastudy.com/courses/ss1-maths-1st-term/lessons/number-base-system-i-week-1/topic/converting-from-other-bases-to-base-10/
+
+https://www.geeksforgeeks.org/awk-command-unixlinux-examples/
+
+https://stackoverflow.com/questions/23010894/awk-convert-notation-of-a-number-while-i-multiply-columns
+
+https://stackoverflow.com/questions/23010894/awk-convert-notation-of-a-number-while-i-multiply-columns
+
+https://opensource.com/article/19/11/how-regular-expressions-awk
+
+https://www.tutorialspoint.com/awk/awk_user_defined_functions.htm
+
+https://www.google.com/search?q=functions+in+awk&oq=functions+in+awk&aqs=chrome..69i57j0i512l4j69i60l3.6196j0j7&sourceid=chrome&ie=UTF-8
+
+https://stackoverflow.com/questions/13482943/each-word-on-a-separate-line
+
+https://rahulk9.medium.com/sort-command-in-unix-linux-with-examples-511823cef84f
+
+https://stackoverflow.com/questions/2437452/how-to-get-the-list-of-files-in-a-directory-in-a-shell-script
+
+https://www.google.com/search?q=how+to+know+names+of+files+in+a+directory&oq=how+to+know+names+of+files+in+a+directory&aqs=chrome..69i57.8217j0j7&sourceid=chrome&ie=UTF-8
+
+https://stackoverflow.com/questions/6135065/how-to-count-occurrences-of-a-word-in-all-the-files-of-a-directory
+
+https://www.tecmint.com/count-word-occurrences-in-linux-text-file/
+
+https://askubuntu.com/questions/716269/print-unique-words-total-number-of-occurrences-and-sum-using-awk
+
+https://stackoverflow.com/questions/27986425/using-awk-to-count-the-number-of-occurrences-of-a-word-in-a-column

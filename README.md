@@ -5,14 +5,14 @@ Here are my Solutions to the lab problems of SSL and work done in SSL Labs, Autu
 This is an introductory course to various Softwares that programmers generally use quite often.
 
 ### Course Content
-         | S.N.        | Topic                        |
-         | ----------- | -----------                  |
-         | 1           | HTML,CSS and Java Script     |
-         | 2           | Bash Basics, Git, Markdown   |
-         | 3           | SED and AWK                  |
-         | 4           | LaTeX Basic and Advanced     |
-         | 5           | Python Basics and Advanced   |
-         | 6           | Web-scraping, DB, Networking |
-         | 7           | Java Basics                  |
-         | 8           | Make, Cmake                  |
-         | 9           | Doxygen and Sphinx           |
+| S.N.        | Topic                        |
+| ------------- | ------------- |
+| 1           | HTML,CSS and Java Script     |
+| 2           | Bash Basics, Git, Markdown   |
+| 3           | SED and AWK                  |
+| 4           | LaTeX Basic and Advanced     |
+| 5           | Python Basics and Advanced   |
+| 6           | Web-scraping, DB, Networking |
+| 7           | Java Basics                  |
+| 8           | Make, Cmake                  |
+| 9           | Doxygen and Sphinx           |

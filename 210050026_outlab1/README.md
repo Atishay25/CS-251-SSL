@@ -1,11 +1,10 @@
-Roll Number : 210050026
-Name        : Atishay Jain
+- Roll Number : 210050026
+- Name        : Atishay Jain
 
 ### Link to my Web Page : https://www.cse.iitb.ac.in/~atishay/
 
-References :
--------------------------------------------------------------------------------------------------------------------
----
+## References :
+-----------------------------------------------------------------------------------------------
 
 javascript basics:
 https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics
@@ -79,7 +78,7 @@ https://thewebdev.info/2022/05/08/how-to-add-a-checkbox-check-event-listener-wit
 Social Media Icons:
 https://www.javatpoint.com/how-to-add-social-media-icons-in-html
 
------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
 
 
 

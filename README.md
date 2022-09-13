@@ -1,6 +1,6 @@
 # CS-251-SSL
 ## Software Systems Lab
-Here are my Solutions to the lab problems of SSL and work done in SSL Labs, Autumn 2022
+Here are my Solutions to the lab problems of SSL and work done by me under CS251 course, Autumn 2022
 
 This is an introductory course to various Softwares that programmers generally use quite often.
 

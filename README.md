@@ -11,8 +11,9 @@ This is an introductory course to various Softwares that programmers generally u
 | 2           | Bash Basics, Git, Markdown   |
 | 3           | SED and AWK                  |
 | 4           | LaTeX Basic and Advanced     |
-| 5           | Python Basics and Advanced   |
-| 6           | Web-scraping, DB, Networking |
-| 7           | Java Basics                  |
-| 8           | Make, Cmake                  |
-| 9           | Doxygen and Sphinx           |
+| 5           | Python Basics                |
+| 6           | Python Advanced              |
+| 7           | Web-scraping, DB, Networking |
+| 8           | Java Basics                  |
+| 9           | Make, Cmake                  |
+| 10          | Doxygen and Sphinx           |

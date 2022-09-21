@@ -1,0 +1,27 @@
+Name 	    - Atishay Jain
+Roll Number - 210050026
+InLab 6 - Doxygen and Sphinx
+
+References -
+
+https://www.geeksforgeeks.org/heap-data-structure/
+
+https://www.programiz.com/dsa/heap-data-structure
+
+https://sphinx-tutorial.readthedocs.io/cheatsheet/
+
+https://search.brave.com/search?q=documentation+using+sphinx&source=desktop
+
+https://cplusplus.com/reference/ostream/ostream/
+
+https://opensource.com/article/22/5/document-source-code-doxygen-linux
+
+https://stackoverflow.com/questions/28890103/unable-to-document-header-file-with-doxygen
+
+https://www.cs.cmu.edu/~410/doc/doxygen.html
+
+https://doxygen.nl/manual/index.html
+
+https://sphinx-rtd-tutorial.readthedocs.io/en/latest/docstrings.html
+
+https://buildmedia.readthedocs.org/media/pdf/brandons-sphinx-tutorial/latest/brandons-sphinx-tutorial.pdf

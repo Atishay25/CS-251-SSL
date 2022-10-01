@@ -1,0 +1,150 @@
+\hypertarget{classBinarySearchTree}{}\doxysection{Binary\+Search\+Tree Class Reference}
+\label{classBinarySearchTree}\index{BinarySearchTree@{BinarySearchTree}}
+
+
+Binary Search Tree Data Structure.  
+
+
+
+
+{\ttfamily \#include $<$DSA.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classBinarySearchTree_a2bfe7e336be4767e1882e22fde3fd1db}{order}} \{ \mbox{\hyperlink{classBinarySearchTree_a2bfe7e336be4767e1882e22fde3fd1dbaa381a1e882a8f9fc289f7d91379dc228}{PRE}}
+, \mbox{\hyperlink{classBinarySearchTree_a2bfe7e336be4767e1882e22fde3fd1dbaba094545b6fea6824db2b885e0f72177}{IN}}
+, \mbox{\hyperlink{classBinarySearchTree_a2bfe7e336be4767e1882e22fde3fd1dba8bedeb99d35b0945e69a1657f265e11f}{POST}}
+ \}
+\begin{DoxyCompactList}\small\item\em Order of Traversal in BST. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBinarySearchTree_a5351a78a161520116785f8eefbb91183}{Binary\+Search\+Tree}} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBinarySearchTree_a66d74598a193495676e94fa72841c3e9}{insert}} (ll val)
+\begin{DoxyCompactList}\small\item\em Insert a New Node in BST with a given Value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBinarySearchTree_a6eacd6ccf405996b1802cbe09b511b8e}{traverse}} (\mbox{\hyperlink{classBSTNode}{BSTNode}} $\ast$T, \mbox{\hyperlink{classBinarySearchTree_a2bfe7e336be4767e1882e22fde3fd1db}{order}} tt)
+\begin{DoxyCompactList}\small\item\em Print the Values stored in BST in a given Traversal Order. \end{DoxyCompactList}\item 
+ll \mbox{\hyperlink{classBinarySearchTree_a23b04920fdbea5ed87cfb30951144e6c}{height}} (\mbox{\hyperlink{classBSTNode}{BSTNode}} $\ast$T)
+\begin{DoxyCompactList}\small\item\em Function to get the Height of a given Node. Height here is defined as the longest distance of a Node to a leaf. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBinarySearchTree_a2c5ba2272f676e7d201920cbe35716c3}\label{classBinarySearchTree_a2c5ba2272f676e7d201920cbe35716c3}} 
+\mbox{\hyperlink{classBSTNode}{BSTNode}} $\ast$ {\bfseries root}
+\begin{DoxyCompactList}\small\item\em Root Node of BST. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Binary Search Tree Data Structure. 
+
+BST is a Binary Tree Data Structure in which -\/
+\begin{DoxyEnumerate}
+\item Left Subtree of each Node stores Nodes with values lesser than the Node
+\item Right Subtree of each Node stores Nodes with values greater than the Node
+\item Left and Right Subtree each must also be a Binary Search Tree 
+\end{DoxyEnumerate}
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classBinarySearchTree_a2bfe7e336be4767e1882e22fde3fd1db}\label{classBinarySearchTree_a2bfe7e336be4767e1882e22fde3fd1db}} 
+\index{BinarySearchTree@{BinarySearchTree}!order@{order}}
+\index{order@{order}!BinarySearchTree@{BinarySearchTree}}
+\doxysubsubsection{\texorpdfstring{order}{order}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classBinarySearchTree_a2bfe7e336be4767e1882e22fde3fd1db}{Binary\+Search\+Tree\+::order}}}
+
+
+
+Order of Traversal in BST. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PRE@{PRE}!BinarySearchTree@{BinarySearchTree}}\index{BinarySearchTree@{BinarySearchTree}!PRE@{PRE}}}\mbox{\Hypertarget{classBinarySearchTree_a2bfe7e336be4767e1882e22fde3fd1dbaa381a1e882a8f9fc289f7d91379dc228}\label{classBinarySearchTree_a2bfe7e336be4767e1882e22fde3fd1dbaa381a1e882a8f9fc289f7d91379dc228}} 
+PRE&Current Node, left, right. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IN@{IN}!BinarySearchTree@{BinarySearchTree}}\index{BinarySearchTree@{BinarySearchTree}!IN@{IN}}}\mbox{\Hypertarget{classBinarySearchTree_a2bfe7e336be4767e1882e22fde3fd1dbaba094545b6fea6824db2b885e0f72177}\label{classBinarySearchTree_a2bfe7e336be4767e1882e22fde3fd1dbaba094545b6fea6824db2b885e0f72177}} 
+IN&left, Current Node, right \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POST@{POST}!BinarySearchTree@{BinarySearchTree}}\index{BinarySearchTree@{BinarySearchTree}!POST@{POST}}}\mbox{\Hypertarget{classBinarySearchTree_a2bfe7e336be4767e1882e22fde3fd1dba8bedeb99d35b0945e69a1657f265e11f}\label{classBinarySearchTree_a2bfe7e336be4767e1882e22fde3fd1dba8bedeb99d35b0945e69a1657f265e11f}} 
+POST&left, right, Current Node \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBinarySearchTree_a5351a78a161520116785f8eefbb91183}\label{classBinarySearchTree_a5351a78a161520116785f8eefbb91183}} 
+\index{BinarySearchTree@{BinarySearchTree}!BinarySearchTree@{BinarySearchTree}}
+\index{BinarySearchTree@{BinarySearchTree}!BinarySearchTree@{BinarySearchTree}}
+\doxysubsubsection{\texorpdfstring{BinarySearchTree()}{BinarySearchTree()}}
+{\footnotesize\ttfamily Binary\+Search\+Tree\+::\+Binary\+Search\+Tree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default Constructor. 
+
+Initializes root to NULL 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBinarySearchTree_a23b04920fdbea5ed87cfb30951144e6c}\label{classBinarySearchTree_a23b04920fdbea5ed87cfb30951144e6c}} 
+\index{BinarySearchTree@{BinarySearchTree}!height@{height}}
+\index{height@{height}!BinarySearchTree@{BinarySearchTree}}
+\doxysubsubsection{\texorpdfstring{height()}{height()}}
+{\footnotesize\ttfamily ll Binary\+Search\+Tree\+::height (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBSTNode}{BSTNode}} $\ast$}]{T }\end{DoxyParamCaption})}
+
+
+
+Function to get the Height of a given Node. Height here is defined as the longest distance of a Node to a leaf. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & Node whose height is to be found \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Height of the given Node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBinarySearchTree_a66d74598a193495676e94fa72841c3e9}\label{classBinarySearchTree_a66d74598a193495676e94fa72841c3e9}} 
+\index{BinarySearchTree@{BinarySearchTree}!insert@{insert}}
+\index{insert@{insert}!BinarySearchTree@{BinarySearchTree}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void Binary\+Search\+Tree\+::insert (\begin{DoxyParamCaption}\item[{ll}]{val }\end{DoxyParamCaption})}
+
+
+
+Insert a New Node in BST with a given Value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & Value to be stored in New Node \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBinarySearchTree_a6eacd6ccf405996b1802cbe09b511b8e}\label{classBinarySearchTree_a6eacd6ccf405996b1802cbe09b511b8e}} 
+\index{BinarySearchTree@{BinarySearchTree}!traverse@{traverse}}
+\index{traverse@{traverse}!BinarySearchTree@{BinarySearchTree}}
+\doxysubsubsection{\texorpdfstring{traverse()}{traverse()}}
+{\footnotesize\ttfamily void Binary\+Search\+Tree\+::traverse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBSTNode}{BSTNode}} $\ast$}]{T,  }\item[{\mbox{\hyperlink{classBinarySearchTree_a2bfe7e336be4767e1882e22fde3fd1db}{order}}}]{tt }\end{DoxyParamCaption})}
+
+
+
+Print the Values stored in BST in a given Traversal Order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & Node starting from which the Tree is to be printed \\
+\hline
+{\em tt} & Order of Traveral of Tree. It can be -\/
+\begin{DoxyEnumerate}
+\item Pre Order
+\item In Order
+\item Post Order 
+\end{DoxyEnumerate}\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{DSA_8h}{DSA.\+h}}\item 
+DSA.\+cpp\end{DoxyCompactItemize}

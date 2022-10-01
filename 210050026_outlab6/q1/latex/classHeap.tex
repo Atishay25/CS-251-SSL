@@ -1,0 +1,181 @@
+\hypertarget{classHeap}{}\doxysection{Heap Class Reference}
+\label{classHeap}\index{Heap@{Heap}}
+
+
+This class implements the \mbox{\hyperlink{classHeap}{Heap}} Data Structure.  
+
+
+
+
+{\ttfamily \#include $<$DSA.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHeap_a6b0516bdc82092b0fa589e20dbe68ad2}{Heap}} (int cap)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classHeap}{Heap}} object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classHeap_a7e293aaac5c9ecbf9259049877277104}{parent}} (int i)
+\begin{DoxyCompactList}\small\item\em Function to get the Parent Node of an element in \mbox{\hyperlink{classHeap}{Heap}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classHeap_aca874d589eb0b08b3e6e1ae92e3a8f75}{left}} (int i)
+\begin{DoxyCompactList}\small\item\em Function to get the Left child of a Node in \mbox{\hyperlink{classHeap}{Heap}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classHeap_a62f9d53e49b61a72f1c13905949ea11d}{right}} (int i)
+\begin{DoxyCompactList}\small\item\em Function to get the Right child of a Node in \mbox{\hyperlink{classHeap}{Heap}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHeap_a114783fb284e14987abbddf51fb62a52}{insert}} (int val)
+\begin{DoxyCompactList}\small\item\em Inserts a new Node into the \mbox{\hyperlink{classHeap}{Heap}} with a given value. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classHeap_ad93f48e902acde400be6499bfbdf4b69}{min}} ()
+\begin{DoxyCompactList}\small\item\em Function to get the Minimum value stored in the \mbox{\hyperlink{classHeap}{Heap}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHeap_aaba4e3d25e14fa78dabaed5e4b5c65b5}{Heapify}} (int root)
+\begin{DoxyCompactList}\small\item\em Heapify is a process of creating a \mbox{\hyperlink{classHeap}{Heap}} from a list of elements or Restoring the \mbox{\hyperlink{classHeap}{Heap}} property if it is violated at any Node. This function implements Heapify on the present \mbox{\hyperlink{classHeap}{Heap}} from a given node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHeap_af274948c7a2986556231a1ee7ed6bd4a}{delete\+Min}} ()
+\begin{DoxyCompactList}\small\item\em Deletes the Minimum Element and Heapifies the heap after deleting the minimum element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHeap_ab59c44915305d5652181b6c1fb1f356f}\label{classHeap_ab59c44915305d5652181b6c1fb1f356f}} 
+int {\bfseries n}
+\begin{DoxyCompactList}\small\item\em Number of elements in current \mbox{\hyperlink{classHeap}{Heap}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHeap_aa35c3b4f498f74df57b9490e7d041a12}\label{classHeap_aa35c3b4f498f74df57b9490e7d041a12}} 
+int {\bfseries Cap}
+\begin{DoxyCompactList}\small\item\em Maximum Capacity of \mbox{\hyperlink{classHeap}{Heap}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHeap_a5fb98656a6c0c7e8d4cc165d01c71049}\label{classHeap_a5fb98656a6c0c7e8d4cc165d01c71049}} 
+int $\ast$ {\bfseries arr}
+\begin{DoxyCompactList}\small\item\em Array in which \mbox{\hyperlink{classHeap}{Heap}} elements are stored. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class implements the \mbox{\hyperlink{classHeap}{Heap}} Data Structure. 
+
+A \mbox{\hyperlink{classHeap}{Heap}} is a special Tree-\/based data structure in which the tree is a Binary Tree that stores priorities (or priority-\/element) pairs at nodes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHeap_a6b0516bdc82092b0fa589e20dbe68ad2}\label{classHeap_a6b0516bdc82092b0fa589e20dbe68ad2}} 
+\index{Heap@{Heap}!Heap@{Heap}}
+\index{Heap@{Heap}!Heap@{Heap}}
+\doxysubsubsection{\texorpdfstring{Heap()}{Heap()}}
+{\footnotesize\ttfamily Heap\+::\+Heap (\begin{DoxyParamCaption}\item[{int}]{cap }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classHeap}{Heap}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cap} & The Maximum Capacity of \mbox{\hyperlink{classHeap}{Heap}} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHeap_af274948c7a2986556231a1ee7ed6bd4a}\label{classHeap_af274948c7a2986556231a1ee7ed6bd4a}} 
+\index{Heap@{Heap}!deleteMin@{deleteMin}}
+\index{deleteMin@{deleteMin}!Heap@{Heap}}
+\doxysubsubsection{\texorpdfstring{deleteMin()}{deleteMin()}}
+{\footnotesize\ttfamily void Heap\+::delete\+Min (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Deletes the Minimum Element and Heapifies the heap after deleting the minimum element. 
+
+\mbox{\Hypertarget{classHeap_aaba4e3d25e14fa78dabaed5e4b5c65b5}\label{classHeap_aaba4e3d25e14fa78dabaed5e4b5c65b5}} 
+\index{Heap@{Heap}!Heapify@{Heapify}}
+\index{Heapify@{Heapify}!Heap@{Heap}}
+\doxysubsubsection{\texorpdfstring{Heapify()}{Heapify()}}
+{\footnotesize\ttfamily void Heap\+::\+Heapify (\begin{DoxyParamCaption}\item[{int}]{root }\end{DoxyParamCaption})}
+
+
+
+Heapify is a process of creating a \mbox{\hyperlink{classHeap}{Heap}} from a list of elements or Restoring the \mbox{\hyperlink{classHeap}{Heap}} property if it is violated at any Node. This function implements Heapify on the present \mbox{\hyperlink{classHeap}{Heap}} from a given node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & Index of Node, starting from which \mbox{\hyperlink{classHeap}{Heap}} will be made \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHeap_a114783fb284e14987abbddf51fb62a52}\label{classHeap_a114783fb284e14987abbddf51fb62a52}} 
+\index{Heap@{Heap}!insert@{insert}}
+\index{insert@{insert}!Heap@{Heap}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void Heap\+::insert (\begin{DoxyParamCaption}\item[{int}]{val }\end{DoxyParamCaption})}
+
+
+
+Inserts a new Node into the \mbox{\hyperlink{classHeap}{Heap}} with a given value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & The value to be stored in the New Node \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHeap_aca874d589eb0b08b3e6e1ae92e3a8f75}\label{classHeap_aca874d589eb0b08b3e6e1ae92e3a8f75}} 
+\index{Heap@{Heap}!left@{left}}
+\index{left@{left}!Heap@{Heap}}
+\doxysubsubsection{\texorpdfstring{left()}{left()}}
+{\footnotesize\ttfamily int Heap\+::left (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Function to get the Left child of a Node in \mbox{\hyperlink{classHeap}{Heap}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Index of element whose Left child is to be found \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index of the Left child 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHeap_ad93f48e902acde400be6499bfbdf4b69}\label{classHeap_ad93f48e902acde400be6499bfbdf4b69}} 
+\index{Heap@{Heap}!min@{min}}
+\index{min@{min}!Heap@{Heap}}
+\doxysubsubsection{\texorpdfstring{min()}{min()}}
+{\footnotesize\ttfamily int Heap\+::min (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function to get the Minimum value stored in the \mbox{\hyperlink{classHeap}{Heap}}. 
+
+\begin{DoxyReturn}{Returns}
+Minimum value stored in \mbox{\hyperlink{classHeap}{Heap}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHeap_a7e293aaac5c9ecbf9259049877277104}\label{classHeap_a7e293aaac5c9ecbf9259049877277104}} 
+\index{Heap@{Heap}!parent@{parent}}
+\index{parent@{parent}!Heap@{Heap}}
+\doxysubsubsection{\texorpdfstring{parent()}{parent()}}
+{\footnotesize\ttfamily int Heap\+::parent (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Function to get the Parent Node of an element in \mbox{\hyperlink{classHeap}{Heap}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Index of element whose Parent Node is to be found \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index of the Parent Node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHeap_a62f9d53e49b61a72f1c13905949ea11d}\label{classHeap_a62f9d53e49b61a72f1c13905949ea11d}} 
+\index{Heap@{Heap}!right@{right}}
+\index{right@{right}!Heap@{Heap}}
+\doxysubsubsection{\texorpdfstring{right()}{right()}}
+{\footnotesize\ttfamily int Heap\+::right (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Function to get the Right child of a Node in \mbox{\hyperlink{classHeap}{Heap}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Index of element whose Right child is to be found \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index of the Right child 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{DSA_8h}{DSA.\+h}}\item 
+DSA.\+cpp\end{DoxyCompactItemize}

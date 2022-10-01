@@ -1,0 +1,150 @@
+\hypertarget{DSA_8h}{}\doxysection{DSA.\+h File Reference}
+\label{DSA_8h}\index{DSA.h@{DSA.h}}
+
+
+Header file for Several Data Structures.  
+
+
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classSinglyLinkedListNode}{Singly\+Linked\+List\+Node}}
+\begin{DoxyCompactList}\small\item\em Node of a Singly Linked List. Stores Data stored in a Node and a pointer to its next Node. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classSinglyLinkedList}{Singly\+Linked\+List}}
+\begin{DoxyCompactList}\small\item\em Singly Linked List Data Structure. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classDoublyLinkedListNode}{Doubly\+Linked\+List\+Node}}
+\begin{DoxyCompactList}\small\item\em Node of a Doubly Linked List. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classDoublyLinkedList}{Doubly\+Linked\+List}}
+\begin{DoxyCompactList}\small\item\em Doubly Linked List Data Structure. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classBSTNode}{BSTNode}}
+\begin{DoxyCompactList}\small\item\em Node of a Binary Search Tree. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classBinarySearchTree}{Binary\+Search\+Tree}}
+\begin{DoxyCompactList}\small\item\em Binary Search Tree Data Structure. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTrie}{Trie}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{classTrie}{Trie}} Data Structure. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classHeap}{Heap}}
+\begin{DoxyCompactList}\small\item\em This class implements the \mbox{\hyperlink{classHeap}{Heap}} Data Structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{DSA_8h_ae1d1ec9482079231e898236e2b23c9ba}\label{DSA_8h_ae1d1ec9482079231e898236e2b23c9ba}} 
+\#define {\bfseries ll}~long long int
+\item 
+\mbox{\Hypertarget{DSA_8h_a9a6d93cda3e4d178aabe221b341f8590}\label{DSA_8h_a9a6d93cda3e4d178aabe221b341f8590}} 
+\#define {\bfseries vi}~vector$<$int$>$
+\item 
+\mbox{\Hypertarget{DSA_8h_a3fae215f58aac1c42f0223648760c4cb}\label{DSA_8h_a3fae215f58aac1c42f0223648760c4cb}} 
+\#define {\bfseries vll}~vector$<$ll$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \mbox{\hyperlink{DSA_8h_a20fa860ec94bf25e8df78b0b761f86fb}{operator$<$$<$}} (ostream \&out, const \mbox{\hyperlink{classSinglyLinkedListNode}{Singly\+Linked\+List\+Node}} \&node)
+\begin{DoxyCompactList}\small\item\em Overloaded \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator to print the data of the Singly Linked List Node provided as arguement into a file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSinglyLinkedList}{Singly\+Linked\+List}} \mbox{\hyperlink{DSA_8h_a0bddd8794faaa2a7d14108d47b820cf7}{merge}} (\mbox{\hyperlink{classSinglyLinkedList}{Singly\+Linked\+List}} list1, \mbox{\hyperlink{classSinglyLinkedList}{Singly\+Linked\+List}} list2)
+\begin{DoxyCompactList}\small\item\em Function to Merge two Singly Linked Lists into one Singly Linked List. \end{DoxyCompactList}\item 
+ostream \& \mbox{\hyperlink{DSA_8h_a21860c28e2e19868b834371706cc63a1}{operator$<$$<$}} (ostream \&out, const \mbox{\hyperlink{classDoublyLinkedListNode}{Doubly\+Linked\+List\+Node}} \&node)
+\begin{DoxyCompactList}\small\item\em Overloaded \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator to print the data of the Doubly Linked List Node provided as arguement into a file. \end{DoxyCompactList}\item 
+ostream \& \mbox{\hyperlink{DSA_8h_a981005c595917014dae96edc044066fb}{operator$<$$<$}} (ostream \&out, const \mbox{\hyperlink{classBSTNode}{BSTNode}} \&node)
+\begin{DoxyCompactList}\small\item\em Overloaded \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator to print the data of the Binary Search Tree Node provided as arguement into a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for Several Data Structures. 
+
+\begin{DoxyAuthor}{Author}
+Atishay Jain (\href{mailto:atishay@cse.iitb.ac.in}{\texttt{ atishay@cse.\+iitb.\+ac.\+in}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/09-\/25
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{DSA_8h_a0bddd8794faaa2a7d14108d47b820cf7}\label{DSA_8h_a0bddd8794faaa2a7d14108d47b820cf7}} 
+\index{DSA.h@{DSA.h}!merge@{merge}}
+\index{merge@{merge}!DSA.h@{DSA.h}}
+\doxysubsubsection{\texorpdfstring{merge()}{merge()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSinglyLinkedList}{Singly\+Linked\+List}} merge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSinglyLinkedList}{Singly\+Linked\+List}}}]{list1,  }\item[{\mbox{\hyperlink{classSinglyLinkedList}{Singly\+Linked\+List}}}]{list2 }\end{DoxyParamCaption})}
+
+
+
+Function to Merge two Singly Linked Lists into one Singly Linked List. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list1} & First Linked List to be merged \\
+\hline
+{\em list2} & Second Linked List to be merged \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classSinglyLinkedList}{Singly\+Linked\+List}} -\/ Merged Singly Linked List 
+\end{DoxyReturn}
+\mbox{\Hypertarget{DSA_8h_a981005c595917014dae96edc044066fb}\label{DSA_8h_a981005c595917014dae96edc044066fb}} 
+\index{DSA.h@{DSA.h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!DSA.h@{DSA.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{out,  }\item[{const \mbox{\hyperlink{classBSTNode}{BSTNode}} \&}]{node }\end{DoxyParamCaption})}
+
+
+
+Overloaded \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator to print the data of the Binary Search Tree Node provided as arguement into a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & File in which the Node data is printed \\
+\hline
+{\em node} & The \mbox{\hyperlink{classBSTNode}{BSTNode}} whose data is to be printed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ostream\& The File with the Node\textquotesingle{}s data printed in it 
+\end{DoxyReturn}
+\mbox{\Hypertarget{DSA_8h_a21860c28e2e19868b834371706cc63a1}\label{DSA_8h_a21860c28e2e19868b834371706cc63a1}} 
+\index{DSA.h@{DSA.h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!DSA.h@{DSA.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{out,  }\item[{const \mbox{\hyperlink{classDoublyLinkedListNode}{Doubly\+Linked\+List\+Node}} \&}]{node }\end{DoxyParamCaption})}
+
+
+
+Overloaded \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator to print the data of the Doubly Linked List Node provided as arguement into a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & File in which the Node data is printed \\
+\hline
+{\em node} & The Doubly Linked List Node whose data is to be printed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ostream\& The File with the Node\textquotesingle{}s data printed in it 
+\end{DoxyReturn}
+\mbox{\Hypertarget{DSA_8h_a20fa860ec94bf25e8df78b0b761f86fb}\label{DSA_8h_a20fa860ec94bf25e8df78b0b761f86fb}} 
+\index{DSA.h@{DSA.h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!DSA.h@{DSA.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{out,  }\item[{const \mbox{\hyperlink{classSinglyLinkedListNode}{Singly\+Linked\+List\+Node}} \&}]{node }\end{DoxyParamCaption})}
+
+
+
+Overloaded \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator to print the data of the Singly Linked List Node provided as arguement into a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & File in which the Node data is printed \\
+\hline
+{\em node} & The Singly Linked List Node whose data is to be printed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ostream\& The File with the Node\textquotesingle{}s data printed in it 
+\end{DoxyReturn}

@@ -1,0 +1,81 @@
+Results of doctest builder run on 2022-09-28 11:39:14
+=====================================================
+
+Document: Heap
+--------------
+1 items passed all tests:
+  59 tests in default
+59 tests in 1 items.
+59 passed and 0 failed.
+Test passed.
+
+Document: BinarySearchTreeNode
+------------------------------
+1 items passed all tests:
+   6 tests in default
+6 tests in 1 items.
+6 passed and 0 failed.
+Test passed.
+
+Document: BinarySearchTree
+--------------------------
+1 items passed all tests:
+  17 tests in default
+17 tests in 1 items.
+17 passed and 0 failed.
+Test passed.
+
+Document: DoublyLinkedListNode
+------------------------------
+1 items passed all tests:
+   6 tests in default
+6 tests in 1 items.
+6 passed and 0 failed.
+Test passed.
+
+Document: merge
+---------------
+1 items passed all tests:
+  10 tests in default
+10 tests in 1 items.
+10 passed and 0 failed.
+Test passed.
+
+Document: Trie
+--------------
+1 items passed all tests:
+  26 tests in default
+26 tests in 1 items.
+26 passed and 0 failed.
+Test passed.
+
+Document: SinglyLinkedListNode
+------------------------------
+1 items passed all tests:
+   7 tests in default
+7 tests in 1 items.
+7 passed and 0 failed.
+Test passed.
+
+Document: SinglyLinkedList
+--------------------------
+1 items passed all tests:
+  38 tests in default
+38 tests in 1 items.
+38 passed and 0 failed.
+Test passed.
+
+Document: DoublyLinkedList
+--------------------------
+1 items passed all tests:
+  18 tests in default
+18 tests in 1 items.
+18 passed and 0 failed.
+Test passed.
+
+Doctest summary
+===============
+  187 tests
+    0 failures in tests
+    0 failures in setup code
+    0 failures in cleanup code

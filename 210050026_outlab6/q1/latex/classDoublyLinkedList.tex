@@ -1,0 +1,98 @@
+\hypertarget{classDoublyLinkedList}{}\doxysection{Doubly\+Linked\+List Class Reference}
+\label{classDoublyLinkedList}\index{DoublyLinkedList@{DoublyLinkedList}}
+
+
+Doubly Linked List Data Structure.  
+
+
+
+
+{\ttfamily \#include $<$DSA.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDoublyLinkedList_a64b759ca82ca4b7767f42ba5691575f5}{Doubly\+Linked\+List}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Doubly Linked List object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDoublyLinkedList_a97ab9a4fc6efab8ba4e80931a1a8dd01}{insert}} (ll data)
+\begin{DoxyCompactList}\small\item\em Insert new Node with a given data into the Linked List. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDoublyLinkedList_a07ba5ca7e780763d10d89efb43abedd1}{printer}} (string sep)
+\begin{DoxyCompactList}\small\item\em Function to print the Linked List with a given separation between the Data stored in each Node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDoublyLinkedList_aad8eb3c0940b6b7bbb310bd40d2de298}{reverse}} ()
+\begin{DoxyCompactList}\small\item\em Reverse the Order of Elements in the Linked List. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDoublyLinkedList_ab85c831a1463a976160fb2bd55e0c82e}\label{classDoublyLinkedList_ab85c831a1463a976160fb2bd55e0c82e}} 
+\mbox{\hyperlink{classDoublyLinkedListNode}{Doubly\+Linked\+List\+Node}} $\ast$ {\bfseries head}
+\begin{DoxyCompactList}\small\item\em Head Node i.\+e. The Node at starting Index. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDoublyLinkedList_a65102ebd8ef6a7a70c2fb3d3ea505f19}\label{classDoublyLinkedList_a65102ebd8ef6a7a70c2fb3d3ea505f19}} 
+\mbox{\hyperlink{classDoublyLinkedListNode}{Doubly\+Linked\+List\+Node}} $\ast$ {\bfseries tail}
+\begin{DoxyCompactList}\small\item\em Tail Node i.\+e. The Node at last Index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Doubly Linked List Data Structure. 
+
+A Doubly Linked List (DLL) contains an extra pointer, typically called the previous pointer, together with the next pointer and data which are there in the singly linked list. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDoublyLinkedList_a64b759ca82ca4b7767f42ba5691575f5}\label{classDoublyLinkedList_a64b759ca82ca4b7767f42ba5691575f5}} 
+\index{DoublyLinkedList@{DoublyLinkedList}!DoublyLinkedList@{DoublyLinkedList}}
+\index{DoublyLinkedList@{DoublyLinkedList}!DoublyLinkedList@{DoublyLinkedList}}
+\doxysubsubsection{\texorpdfstring{DoublyLinkedList()}{DoublyLinkedList()}}
+{\footnotesize\ttfamily Doubly\+Linked\+List\+::\+Doubly\+Linked\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new Doubly Linked List object. 
+
+Sets head and tail to NULL 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDoublyLinkedList_a97ab9a4fc6efab8ba4e80931a1a8dd01}\label{classDoublyLinkedList_a97ab9a4fc6efab8ba4e80931a1a8dd01}} 
+\index{DoublyLinkedList@{DoublyLinkedList}!insert@{insert}}
+\index{insert@{insert}!DoublyLinkedList@{DoublyLinkedList}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void Doubly\+Linked\+List\+::insert (\begin{DoxyParamCaption}\item[{ll}]{data }\end{DoxyParamCaption})}
+
+
+
+Insert new Node with a given data into the Linked List. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Data to be stored into the New Node \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDoublyLinkedList_a07ba5ca7e780763d10d89efb43abedd1}\label{classDoublyLinkedList_a07ba5ca7e780763d10d89efb43abedd1}} 
+\index{DoublyLinkedList@{DoublyLinkedList}!printer@{printer}}
+\index{printer@{printer}!DoublyLinkedList@{DoublyLinkedList}}
+\doxysubsubsection{\texorpdfstring{printer()}{printer()}}
+{\footnotesize\ttfamily void Doubly\+Linked\+List\+::printer (\begin{DoxyParamCaption}\item[{string}]{sep = {\ttfamily \char`\"{},~\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Function to print the Linked List with a given separation between the Data stored in each Node. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sep} & Separation to be used between Datam of each node while printing the linked list \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDoublyLinkedList_aad8eb3c0940b6b7bbb310bd40d2de298}\label{classDoublyLinkedList_aad8eb3c0940b6b7bbb310bd40d2de298}} 
+\index{DoublyLinkedList@{DoublyLinkedList}!reverse@{reverse}}
+\index{reverse@{reverse}!DoublyLinkedList@{DoublyLinkedList}}
+\doxysubsubsection{\texorpdfstring{reverse()}{reverse()}}
+{\footnotesize\ttfamily void Doubly\+Linked\+List\+::reverse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reverse the Order of Elements in the Linked List. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{DSA_8h}{DSA.\+h}}\item 
+DSA.\+cpp\end{DoxyCompactItemize}

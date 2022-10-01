@@ -1,0 +1,1121 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>DSA &#8212; outlabq2  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for DSA</h1><div class="highlight"><pre>
+<span></span><span class="c1">################################## Data Structures ################################</span>
+
+
+<span class="c1"># ------------------------------- Singly Linked List -----------------------------</span>
+
+
+<div class="viewcode-block" id="SinglyLinkedListNode"><a class="viewcode-back" href="../DSA.html#DSA.SinglyLinkedListNode">[docs]</a><span class="k">class</span> <span class="nc">SinglyLinkedListNode</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    | *Node of a Singly Linked List*</span>
+<span class="sd">    | Each Node in a Singly Linked List stores -</span>
+<span class="sd">      </span>
+<span class="sd">    1. **Data** value (can be of any data type like int, str, float etc)</span>
+<span class="sd">    2. **Pointer** (or reference) to its next Node</span>
+
+<span class="sd">    :param data: Value to be stored in a Node</span>
+<span class="sd">    :type data: int</span>
+<span class="sd">    :param next: Reference to next Node</span>
+<span class="sd">    :type next: SinglyLinkedListNode</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+<div class="viewcode-block" id="SinglyLinkedListNode.__init__"><a class="viewcode-back" href="../DSA.html#DSA.SinglyLinkedListNode.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        | Constructor to initialize a new Singly Linked List Node object</span>
+<span class="sd">        | Initializes a Node with given ``data`` stored in it and ``next`` Pointer as `None`</span>
+
+<span class="sd">        :param data: Value to be stored in a Node</span>
+<span class="sd">        :type data: int</span>
+
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; from DSA import SinglyLinkedListNode</span>
+<span class="sd">            &gt;&gt;&gt; Node = SinglyLinkedListNode(10)</span>
+<span class="sd">            &gt;&gt;&gt; print(Node.data)</span>
+<span class="sd">            10</span>
+<span class="sd">            &gt;&gt;&gt; print(Node.next)</span>
+<span class="sd">            None</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="kc">None</span></div>
+    
+<div class="viewcode-block" id="SinglyLinkedListNode.__str__"><a class="viewcode-back" href="../DSA.html#DSA.SinglyLinkedListNode.__str__">[docs]</a>    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Converter to return value of data stored, converted into string data type</span>
+
+<span class="sd">        :return: Data stored in Node in string data type</span>
+<span class="sd">        :rtype: str</span>
+
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; from DSA import SinglyLinkedListNode</span>
+<span class="sd">            &gt;&gt;&gt; Node = SinglyLinkedListNode(10)</span>
+<span class="sd">            &gt;&gt;&gt; dataStr = Node.__str__()</span>
+<span class="sd">            &gt;&gt;&gt; print(dataStr)</span>
+<span class="sd">            10</span>
+<span class="sd">            &gt;&gt;&gt; print(type(dataStr))</span>
+<span class="sd">            &lt;class &#39;str&#39;&gt;</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="SinglyLinkedList"><a class="viewcode-back" href="../DSA.html#DSA.SinglyLinkedList">[docs]</a><span class="k">class</span> <span class="nc">SinglyLinkedList</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    | *Singly Linked List Data Structure*</span>
+<span class="sd">    | It is the simplest type of linked list in which every node contains </span>
+<span class="sd">      some data and a pointer to the next node of the same data type.  </span>
+
+<span class="sd">    :param head: Reference to first Node of Linked List</span>
+<span class="sd">    :param tail: Reference to last Node of Linked List</span>
+<span class="sd">    :type head: SinglyLinkedListNode</span>
+<span class="sd">    :type tail: SinglyLinkedListNode</span>
+
+<span class="sd">    | Available functions on a Singly Linked List object are -</span>
+
+<span class="sd">    - ``insert`` - Insert a new Node</span>
+<span class="sd">    - ``find`` - Find a particular Node</span>
+<span class="sd">    - ``deleteVal`` - Delete a particular Node</span>
+<span class="sd">    - ``printer`` - Print the Linked List</span>
+<span class="sd">    - ``reverse`` - Reverse the order of elements in Linked List</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+<div class="viewcode-block" id="SinglyLinkedList.__init__"><a class="viewcode-back" href="../DSA.html#DSA.SinglyLinkedList.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        | Constructor for Singly Linked List</span>
+<span class="sd">        | Initializes ``head`` and ``tail`` to `None`</span>
+
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; linkedList = SinglyLinkedList()</span>
+<span class="sd">            &gt;&gt;&gt; linkedList.printer()</span>
+<span class="sd">            []</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tail</span> <span class="o">=</span> <span class="kc">None</span></div>
+   
+<div class="viewcode-block" id="SinglyLinkedList.insert"><a class="viewcode-back" href="../DSA.html#DSA.SinglyLinkedList.insert">[docs]</a>    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Insert a new Node into the Linked List with a particular data stored in it. </span>
+
+<span class="sd">        :param data: value to be stored in new Node inserted</span>
+<span class="sd">        :type data: int</span>
+
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; linkedList = SinglyLinkedList()</span>
+<span class="sd">            &gt;&gt;&gt; linkedList.printer()</span>
+<span class="sd">            []</span>
+<span class="sd">            &gt;&gt;&gt; linkedList.insert(25)</span>
+<span class="sd">            &gt;&gt;&gt; linkedList.printer()</span>
+<span class="sd">            [25]</span>
+<span class="sd">            &gt;&gt;&gt; linkedList.insert(15)</span>
+<span class="sd">            &gt;&gt;&gt; linkedList.printer()</span>
+<span class="sd">            [25, 15]</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="n">SinglyLinkedListNode</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1"># new node</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="p">:</span> <span class="c1"># no head</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">node</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tail</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">node</span> <span class="c1"># add behind tail</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tail</span> <span class="o">=</span> <span class="n">node</span> <span class="c1"># move tail</span></div>
+    
+<div class="viewcode-block" id="SinglyLinkedList.find"><a class="viewcode-back" href="../DSA.html#DSA.SinglyLinkedList.find">[docs]</a>    <span class="k">def</span> <span class="nf">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Find Previous Node of a Node with a given data</span>
+<span class="sd">        </span>
+<span class="sd">        :param data: value of data to be found</span>
+<span class="sd">        :type data: int</span>
+<span class="sd">        :param prev: Previous Node</span>
+<span class="sd">        :type prev: SinglyLinkedListNode</span>
+<span class="sd">        :return: Previous Node of the Node with given data (if found), else returns `None`</span>
+<span class="sd">        :rtype: int</span>
+
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; linkedList = SinglyLinkedList()</span>
+<span class="sd">            &gt;&gt;&gt; linkedList.insert(25)</span>
+<span class="sd">            &gt;&gt;&gt; linkedList.insert(15)</span>
+<span class="sd">            &gt;&gt;&gt; linkedList.insert(12)</span>
+<span class="sd">            &gt;&gt;&gt; linkedList.printer()</span>
+<span class="sd">            [25, 15, 12]</span>
+<span class="sd">            &gt;&gt;&gt; prevNode = linkedList.find(12)</span>
+<span class="sd">            &gt;&gt;&gt; print(prevNode.data)</span>
+<span class="sd">            15</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="n">prev</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">while</span> <span class="n">head</span> <span class="o">!=</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">head</span><span class="o">.</span><span class="n">data</span> <span class="o">!=</span> <span class="n">data</span><span class="p">:</span>
+            <span class="n">prev</span> <span class="o">=</span> <span class="n">head</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="n">next</span>
+        <span class="k">return</span> <span class="n">prev</span></div>
+    
+<div class="viewcode-block" id="SinglyLinkedList.deleteVal"><a class="viewcode-back" href="../DSA.html#DSA.SinglyLinkedList.deleteVal">[docs]</a>    <span class="k">def</span> <span class="nf">deleteVal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Delete the Node with given data</span>
+
+<span class="sd">        :param data: value stored in the Node which is to be deleted</span>
+<span class="sd">        :type data: int</span>
+<span class="sd">        :return: `True`, if desired `Node` is deleted</span>
+<span class="sd">        :return: `False`, if Node to be deleted is None already</span>
+<span class="sd">        :rtype: bool</span>
+
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; linkedList = SinglyLinkedList()</span>
+<span class="sd">            &gt;&gt;&gt; linkedList.insert(10)</span>
+<span class="sd">            &gt;&gt;&gt; linkedList.insert(20)</span>
+<span class="sd">            &gt;&gt;&gt; linkedList.insert(30)</span>
+<span class="sd">            &gt;&gt;&gt; linkedList.printer()</span>
+<span class="sd">            [10, 20, 30]</span>
+<span class="sd">            &gt;&gt;&gt; delNode = linkedList.deleteVal(20)</span>
+<span class="sd">            &gt;&gt;&gt; print(delNode)</span>
+<span class="sd">            True</span>
+<span class="sd">            &gt;&gt;&gt; linkedList.printer()</span>
+<span class="sd">            [10, 30]</span>
+<span class="sd">            &gt;&gt;&gt; delNode2 = linkedList.deleteVal(50)</span>
+<span class="sd">            &gt;&gt;&gt; print(delNode2)</span>
+<span class="sd">            False</span>
+<span class="sd">            &gt;&gt;&gt; linkedList.printer()</span>
+<span class="sd">            [10, 30]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">prevPos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">prevPos</span><span class="o">.</span><span class="n">next</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="n">prevPos</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">prevPos</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span>
+        <span class="k">return</span> <span class="kc">True</span></div>
+    
+<div class="viewcode-block" id="SinglyLinkedList.printer"><a class="viewcode-back" href="../DSA.html#DSA.SinglyLinkedList.printer">[docs]</a>    <span class="k">def</span> <span class="nf">printer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;, &#39;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Function to print the Linked List with a given separation</span>
+<span class="sd">        between the Data stored in each Node</span>
+
+<span class="sd">        :param sep: Separation to be used between Data of each node while printing the linked list</span>
+<span class="sd">        :type sep: str</span>
+
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; linkedList = SinglyLinkedList()</span>
+<span class="sd">            &gt;&gt;&gt; linkedList.insert(25)</span>
+<span class="sd">            &gt;&gt;&gt; linkedList.insert(15)</span>
+<span class="sd">            &gt;&gt;&gt; linkedList.insert(12)</span>
+<span class="sd">            &gt;&gt;&gt; linkedList.printer()</span>
+<span class="sd">            [25, 15, 12]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ptr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[&#39;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="k">while</span> <span class="n">ptr</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">ptr</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="n">ptr</span> <span class="o">=</span> <span class="n">ptr</span><span class="o">.</span><span class="n">next</span>
+            <span class="k">if</span> <span class="n">ptr</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">sep</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;]&#39;</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="SinglyLinkedList.reverse"><a class="viewcode-back" href="../DSA.html#DSA.SinglyLinkedList.reverse">[docs]</a>    <span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Reverse the Order of Elements in the Linked List</span>
+
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; linkedList = SinglyLinkedList()</span>
+<span class="sd">            &gt;&gt;&gt; linkedList.insert(10)</span>
+<span class="sd">            &gt;&gt;&gt; linkedList.insert(20)</span>
+<span class="sd">            &gt;&gt;&gt; linkedList.insert(30)</span>
+<span class="sd">            &gt;&gt;&gt; linkedList.printer()</span>
+<span class="sd">            [10, 20, 30]</span>
+<span class="sd">            &gt;&gt;&gt; linkedList.reverse()</span>
+<span class="sd">            &gt;&gt;&gt; linkedList.printer()</span>
+<span class="sd">            [30, 20, 10]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="c1"># head pointer</span>
+        <span class="n">prev</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># previous pointer</span>
+        <span class="k">while</span> <span class="n">head</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span> <span class="c1"># while there is forward link left</span>
+            <span class="n">newHead</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="n">next</span> <span class="c1"># save extra pointer to next element</span>
+            <span class="n">head</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">prev</span> <span class="c1"># reverse the link of current element</span>
+            <span class="n">prev</span> <span class="o">=</span> <span class="n">head</span> <span class="c1"># move pointer to previous element</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">newHead</span> <span class="c1"># use extra pointer to move to next element</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tail</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">prev</span></div></div>
+
+<div class="viewcode-block" id="merge"><a class="viewcode-back" href="../DSA.html#DSA.merge">[docs]</a><span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Function to Merge two Singly Linked Lists into one Singly Linked List</span>
+
+<span class="sd">    :param list1: First Linked List to be merged</span>
+<span class="sd">    :type list1: SinglyLinkedList</span>
+<span class="sd">    :param list2: Second Linked List to be merged</span>
+<span class="sd">    :type list2: SinglyLinkedList</span>
+<span class="sd">    </span>
+<span class="sd">    :return: Merged Linked List</span>
+<span class="sd">    :rtype: SinglyLinkedList</span>
+<span class="sd">    </span>
+<span class="sd">    :Example:</span>
+<span class="sd">        &gt;&gt;&gt; list1 = SinglyLinkedList()</span>
+<span class="sd">        &gt;&gt;&gt; list1.insert(10)</span>
+<span class="sd">        &gt;&gt;&gt; list1.insert(20)</span>
+<span class="sd">        &gt;&gt;&gt; list2 = SinglyLinkedList()</span>
+<span class="sd">        &gt;&gt;&gt; list2.insert(150)</span>
+<span class="sd">        &gt;&gt;&gt; list2.insert(160)</span>
+<span class="sd">        &gt;&gt;&gt; list1.printer()</span>
+<span class="sd">        [10, 20]</span>
+<span class="sd">        &gt;&gt;&gt; list2.printer()</span>
+<span class="sd">        [150, 160]</span>
+<span class="sd">        &gt;&gt;&gt; merge_list = merge(list1,list2)</span>
+<span class="sd">        &gt;&gt;&gt; merge_list.printer()</span>
+<span class="sd">        [10, 20, 150, 160]</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">merged</span> <span class="o">=</span> <span class="n">SinglyLinkedList</span><span class="p">()</span>
+    <span class="n">head1</span> <span class="o">=</span> <span class="n">list1</span><span class="o">.</span><span class="n">head</span>
+    <span class="n">head2</span> <span class="o">=</span> <span class="n">list2</span><span class="o">.</span><span class="n">head</span>
+    <span class="k">while</span> <span class="n">head1</span> <span class="o">!=</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">head2</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span> <span class="c1"># both lists not empty</span>
+        <span class="k">if</span> <span class="n">head1</span><span class="o">.</span><span class="n">data</span> <span class="o">&lt;</span> <span class="n">head2</span><span class="o">.</span><span class="n">data</span><span class="p">:</span> <span class="c1"># link node with smaller data</span>
+            <span class="n">merged</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">head1</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+            <span class="n">head1</span> <span class="o">=</span> <span class="n">head1</span><span class="o">.</span><span class="n">next</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">merged</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">head2</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+            <span class="n">head2</span> <span class="o">=</span> <span class="n">head2</span><span class="o">.</span><span class="n">next</span>
+    <span class="k">if</span> <span class="n">head1</span> <span class="o">==</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">head2</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span> <span class="c1"># list 1 finished</span>
+        <span class="n">merged</span><span class="o">.</span><span class="n">tail</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">head2</span> <span class="c1"># add remaining list 2 as is</span>
+    <span class="k">if</span> <span class="n">head1</span> <span class="o">!=</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">head2</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span> <span class="c1"># list 2 finished</span>
+        <span class="n">merged</span><span class="o">.</span><span class="n">tail</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">head1</span> <span class="c1"># add remaining list 1 as is</span>
+    <span class="k">return</span> <span class="n">merged</span></div>
+
+
+<span class="c1"># ------------------------------ Doubly Linked List ----------------------------</span>
+
+
+<div class="viewcode-block" id="DoublyLinkedListNode"><a class="viewcode-back" href="../DSA.html#DSA.DoublyLinkedListNode">[docs]</a><span class="k">class</span> <span class="nc">DoublyLinkedListNode</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    | *Node of a Doubly Linked List*</span>
+<span class="sd">    | A Double Linked List Node stores an additional pointer as compared to a </span>
+<span class="sd">      Singly Linked List Node, mainly to point to Previous Node as well</span>
+<span class="sd">    | Each Node in a Singly Linked List stores -</span>
+<span class="sd">      </span>
+<span class="sd">    1. **Data** value (can be of any data type like int, str, float etc)</span>
+<span class="sd">    2. **Pointer** (or reference) to its next Node</span>
+<span class="sd">    3. **Pointer** (or reference) to its previous Node</span>
+
+<span class="sd">    :param data: Value to be stored in a Node</span>
+<span class="sd">    :type data: int</span>
+<span class="sd">    :param next: Pointer to next Node</span>
+<span class="sd">    :type next: SinglyLinkedListNode</span>
+<span class="sd">    :param prev: Pointer to previous Node</span>
+<span class="sd">    :type prev: DoublyLinkedListNode</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+<div class="viewcode-block" id="DoublyLinkedListNode.__init__"><a class="viewcode-back" href="../DSA.html#DSA.DoublyLinkedListNode.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        | Constructor to initialize a new Doubly Linked List Node object</span>
+<span class="sd">        | It initializes ``next`` and ``prev`` to `None` and ``data`` to given data value</span>
+
+<span class="sd">        :param data: Value to be stored in Node</span>
+<span class="sd">        :type data: int</span>
+
+<span class="sd">        :Example: </span>
+<span class="sd">            &gt;&gt;&gt; dlNode = DoublyLinkedListNode(45)</span>
+<span class="sd">            &gt;&gt;&gt; print(dlNode.data)</span>
+<span class="sd">            45</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">prev</span> <span class="o">=</span> <span class="kc">None</span></div>
+    
+<div class="viewcode-block" id="DoublyLinkedListNode.__str__"><a class="viewcode-back" href="../DSA.html#DSA.DoublyLinkedListNode.__str__">[docs]</a>    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Converter to return value of data stored, converted into string data type</span>
+
+<span class="sd">        :return: Data stored in Node in string data type</span>
+<span class="sd">        :rtype: str</span>
+
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; from DSA import DoublyLinkedListNode</span>
+<span class="sd">            &gt;&gt;&gt; Node = DoublyLinkedListNode(10)</span>
+<span class="sd">            &gt;&gt;&gt; dataStr = Node.__str__()</span>
+<span class="sd">            &gt;&gt;&gt; print(dataStr)</span>
+<span class="sd">            10</span>
+<span class="sd">            &gt;&gt;&gt; print(type(dataStr))</span>
+<span class="sd">            &lt;class &#39;str&#39;&gt;</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> </div></div>
+
+<div class="viewcode-block" id="DoublyLinkedList"><a class="viewcode-back" href="../DSA.html#DSA.DoublyLinkedList">[docs]</a><span class="k">class</span> <span class="nc">DoublyLinkedList</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    | *Doubly Linked List Data Structure*</span>
+<span class="sd">    | A Doubly Linked List (DLL) contains an extra pointer, typically </span>
+<span class="sd">      called the previous pointer, together with the next pointer and </span>
+<span class="sd">      data which are there in the singly linked list.</span>
+
+<span class="sd">    :param head: Head/First Node of the Linked List</span>
+<span class="sd">    :param tail: Tail/Last Node of the Linked List</span>
+<span class="sd">    :type head: DoublyLinkedListNode</span>
+<span class="sd">    :type tail: DoublyLinkedListNode</span>
+
+<span class="sd">    | Available functions on a Doubly Linked List object are -</span>
+<span class="sd">        </span>
+<span class="sd">    - ``insert``  - Insert a new Node</span>
+<span class="sd">    - ``printer`` - Print the Linked List</span>
+<span class="sd">    - ``reverse`` - Reverse the order of elements in Linked List</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+<div class="viewcode-block" id="DoublyLinkedList.__init__"><a class="viewcode-back" href="../DSA.html#DSA.DoublyLinkedList.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        | Constructor for Singly Linked List</span>
+<span class="sd">        | Initializes ``head`` and ``tail`` to `None`</span>
+
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; dlList = DoublyLinkedList()</span>
+<span class="sd">            &gt;&gt;&gt; dlList.printer()</span>
+<span class="sd">            []</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tail</span> <span class="o">=</span> <span class="kc">None</span></div>
+    
+<div class="viewcode-block" id="DoublyLinkedList.insert"><a class="viewcode-back" href="../DSA.html#DSA.DoublyLinkedList.insert">[docs]</a>    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Insert a new Node into the Linked List with a particular data stored in it. </span>
+
+<span class="sd">        :param data: value to be stored in new Node inserted</span>
+<span class="sd">        :type data: int</span>
+
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; dlList = DoublyLinkedList()</span>
+<span class="sd">            &gt;&gt;&gt; dlList.insert(25)</span>
+<span class="sd">            &gt;&gt;&gt; dlList.insert(50)</span>
+<span class="sd">            &gt;&gt;&gt; dlList.insert(75)</span>
+<span class="sd">            &gt;&gt;&gt; dlList.printer()</span>
+<span class="sd">            [25, 50, 75]</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="n">DoublyLinkedListNode</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1"># new node</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="p">:</span> <span class="c1"># no head</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">node</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tail</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">node</span> <span class="c1"># add behind tail</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">prev</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tail</span> <span class="o">=</span> <span class="n">node</span> <span class="c1"># move tail</span></div>
+    
+<div class="viewcode-block" id="DoublyLinkedList.printer"><a class="viewcode-back" href="../DSA.html#DSA.DoublyLinkedList.printer">[docs]</a>    <span class="k">def</span> <span class="nf">printer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;, &#39;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Function to print the Linked List with a given separation</span>
+<span class="sd">        between the Data stored in each Node</span>
+
+<span class="sd">        :param sep: Separation to be used between Datam of each node while printing the linked list</span>
+<span class="sd">        :type sep: str</span>
+
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; dlList = DoublyLinkedList()</span>
+<span class="sd">            &gt;&gt;&gt; dlList.insert(25)</span>
+<span class="sd">            &gt;&gt;&gt; dlList.insert(50)</span>
+<span class="sd">            &gt;&gt;&gt; dlList.printer()</span>
+<span class="sd">            [25, 50]</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ptr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[&#39;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="k">while</span> <span class="n">ptr</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">ptr</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="n">ptr</span> <span class="o">=</span> <span class="n">ptr</span><span class="o">.</span><span class="n">next</span>
+            <span class="k">if</span> <span class="n">ptr</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">sep</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;]&#39;</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="DoublyLinkedList.reverse"><a class="viewcode-back" href="../DSA.html#DSA.DoublyLinkedList.reverse">[docs]</a>    <span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Reverse the Order of Elements in the Linked List</span>
+
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; dlList = DoublyLinkedList()</span>
+<span class="sd">            &gt;&gt;&gt; dlList.insert(25)</span>
+<span class="sd">            &gt;&gt;&gt; dlList.insert(50)</span>
+<span class="sd">            &gt;&gt;&gt; dlList.insert(75)</span>
+<span class="sd">            &gt;&gt;&gt; dlList.printer()</span>
+<span class="sd">            [25, 50, 75]</span>
+<span class="sd">            &gt;&gt;&gt; dlList.reverse()</span>
+<span class="sd">            &gt;&gt;&gt; dlList.printer()</span>
+<span class="sd">            [75, 50, 25]</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="c1"># head pointer</span>
+        <span class="n">prev</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># previous pointer</span>
+        <span class="k">while</span> <span class="n">head</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span> <span class="c1"># new node left</span>
+            <span class="n">newHead</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="n">next</span> <span class="c1"># save pointer to next node (cut forward link)</span>
+            <span class="k">if</span> <span class="n">newHead</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span> <span class="c1"># check if next node has a reverse link</span>
+                <span class="n">newHead</span><span class="o">.</span><span class="n">prev</span> <span class="o">=</span> <span class="n">head</span> <span class="c1"># save pointer to previous node (cut reverse link)</span>
+            <span class="n">head</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">prev</span> <span class="c1"># reverse the forward link</span>
+            <span class="n">head</span><span class="o">.</span><span class="n">prev</span> <span class="o">=</span> <span class="n">newHead</span> <span class="c1"># reverse the reverse link</span>
+            <span class="n">prev</span> <span class="o">=</span> <span class="n">head</span> <span class="c1"># move pointer to previous element</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">newHead</span> <span class="c1"># use saved pointer to move head</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tail</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">prev</span></div></div>
+
+
+<span class="c1"># -------------------------- Binary Search Tree ------------------------------</span>
+
+
+<div class="viewcode-block" id="BSTNode"><a class="viewcode-back" href="../DSA.html#DSA.BSTNode">[docs]</a><span class="k">class</span> <span class="nc">BSTNode</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    | *Node of a Binary Search Tree*</span>
+
+<span class="sd">    :param info: Value stored at a Node</span>
+<span class="sd">    :param left: Reference to left Node</span>
+<span class="sd">    :param right: Reference to right Node</span>
+<span class="sd">    :param level: Height of the Node</span>
+<span class="sd">    :type info: int</span>
+<span class="sd">    :type left: BSTNode</span>
+<span class="sd">    :type right: BSTNode</span>
+<span class="sd">    :type level: int</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+<div class="viewcode-block" id="BSTNode.__init__"><a class="viewcode-back" href="../DSA.html#DSA.BSTNode.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">info</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Constructor to initialize a new BSTNode object</span>
+
+<span class="sd">        :param info: Value to be stored in Node</span>
+<span class="sd">        :type info: int</span>
+
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; bstNode = BSTNode(25)</span>
+<span class="sd">            &gt;&gt;&gt; print(bstNode.info)</span>
+<span class="sd">            25</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">info</span> <span class="o">=</span> <span class="n">info</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">level</span> <span class="o">=</span> <span class="kc">None</span></div>
+    
+<div class="viewcode-block" id="BSTNode.__str__"><a class="viewcode-back" href="../DSA.html#DSA.BSTNode.__str__">[docs]</a>    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Converter to return value stored , but converted into string data type</span>
+
+<span class="sd">        :return: Data stored in Node in string data type</span>
+<span class="sd">        :rtype: str</span>
+<span class="sd">        </span>
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; bstNode = BSTNode(25)</span>
+<span class="sd">            &gt;&gt;&gt; info_str = bstNode.__str__()</span>
+<span class="sd">            &gt;&gt;&gt; print(info_str)</span>
+<span class="sd">            25</span>
+<span class="sd">            &gt;&gt;&gt; print(type(info_str))</span>
+<span class="sd">            &lt;class &#39;str&#39;&gt;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="BinarySearchTree"><a class="viewcode-back" href="../DSA.html#DSA.BinarySearchTree">[docs]</a><span class="k">class</span> <span class="nc">BinarySearchTree</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    | *Binary Search Tree Data Structure*</span>
+<span class="sd">    | BST is a Binary Tree Data Structure in which -</span>
+
+<span class="sd">    - Left Subtree of each Node stores Nodes with values *lesser* than the Node</span>
+<span class="sd">    - Right Subtree of each Node stores Nodes with values *greater* than the Node</span>
+<span class="sd">    - Left and Right Subtree each must also be a *Binary Search Tree*</span>
+
+<span class="sd">    :param root: Root Node of BST, starting from which the Tree originates</span>
+<span class="sd">    :type root: BSTNode</span>
+
+<span class="sd">    | Available functions on a Binary Search Tree object are -</span>
+<span class="sd">        </span>
+<span class="sd">    - ``insert``  - Insert a new Node</span>
+<span class="sd">    - ``traverse`` - Print the BST by traversing it in a given Order</span>
+<span class="sd">    - ``height`` - Get height of subtree rooted at a given Node</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+<div class="viewcode-block" id="BinarySearchTree.__init__"><a class="viewcode-back" href="../DSA.html#DSA.BinarySearchTree.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Constructor to initialize a new BST, initializes ``root`` to `None`</span>
+
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; bst = BinarySearchTree()</span>
+<span class="sd">            &gt;&gt;&gt; print(bst.root)</span>
+<span class="sd">            None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="kc">None</span></div>
+    
+<div class="viewcode-block" id="BinarySearchTree.insert"><a class="viewcode-back" href="../DSA.html#DSA.BinarySearchTree.insert">[docs]</a>    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Insert a New Node in BST with a given Value</span>
+
+<span class="sd">        :param val: Value to be stored in New Node</span>
+<span class="sd">        :type val: int</span>
+
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; bst = BinarySearchTree()</span>
+<span class="sd">            &gt;&gt;&gt; bst.insert(20)</span>
+<span class="sd">            &gt;&gt;&gt; bst.insert(25)</span>
+<span class="sd">            &gt;&gt;&gt; bst.insert(50)</span>
+<span class="sd">            &gt;&gt;&gt; print(bst.root)</span>
+<span class="sd">            20</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">BSTNode</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span>
+            <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">val</span> <span class="o">&lt;</span> <span class="n">current</span><span class="o">.</span><span class="n">info</span><span class="p">:</span> <span class="c1"># move to left sub-tree</span>
+                    <span class="k">if</span> <span class="n">current</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+                        <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">left</span> <span class="c1"># root moved</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">current</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">BSTNode</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="c1"># left init</span>
+                        <span class="k">break</span>
+                <span class="k">elif</span> <span class="n">val</span> <span class="o">&gt;</span> <span class="n">current</span><span class="o">.</span><span class="n">info</span><span class="p">:</span> <span class="c1"># move to right sub-tree</span>
+                    <span class="k">if</span> <span class="n">current</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+                        <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">right</span> <span class="c1"># root moved</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">current</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">BSTNode</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="c1"># right init</span>
+                        <span class="k">break</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">break</span> <span class="c1"># value exists</span></div>
+    
+<div class="viewcode-block" id="BinarySearchTree.traverse"><a class="viewcode-back" href="../DSA.html#DSA.BinarySearchTree.traverse">[docs]</a>    <span class="k">def</span> <span class="nf">traverse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Print the values stored in BST in a given Traversal Order</span>
+
+<span class="sd">        :param order: Order of Traversal of Tree</span>
+<span class="sd">        :type order: str</span>
+
+<span class="sd">        | The Order of Traversal can be -</span>
+<span class="sd">        </span>
+<span class="sd">        - ``PRE``  : Current Node, left, right</span>
+<span class="sd">        - ``IN``   : left, Current Node, right</span>
+<span class="sd">        - ``POST`` : left, right, Current Node</span>
+
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; bst = BinarySearchTree()</span>
+<span class="sd">            &gt;&gt;&gt; bst.insert(20)</span>
+<span class="sd">            &gt;&gt;&gt; bst.insert(25)</span>
+<span class="sd">            &gt;&gt;&gt; bst.insert(50)</span>
+<span class="sd">            &gt;&gt;&gt; bst.traverse(&quot;PRE&quot;)</span>
+<span class="sd">            20 25 50 </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">preOrder</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">info</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">root</span><span class="o">.</span><span class="n">left</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">preOrder</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">root</span><span class="o">.</span><span class="n">right</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">preOrder</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">inOrder</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">root</span><span class="o">.</span><span class="n">left</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">inOrder</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">info</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">root</span><span class="o">.</span><span class="n">right</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">inOrder</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">postOrder</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">root</span><span class="o">.</span><span class="n">left</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">postOrder</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">root</span><span class="o">.</span><span class="n">right</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">postOrder</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">info</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">order</span> <span class="o">==</span> <span class="s1">&#39;PRE&#39;</span><span class="p">:</span>
+            <span class="n">preOrder</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">order</span> <span class="o">==</span> <span class="s1">&#39;IN&#39;</span><span class="p">:</span>
+            <span class="n">inOrder</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">order</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+            <span class="n">postOrder</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="BinarySearchTree.height"><a class="viewcode-back" href="../DSA.html#DSA.BinarySearchTree.height">[docs]</a>    <span class="k">def</span> <span class="nf">height</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        | Function to get the Height of subtree rooted at a given Node.</span>
+<span class="sd">        | Height here is defined as the longest distance of a Node to a leaf.</span>
+
+<span class="sd">        :param root: Node whose height is to be found</span>
+<span class="sd">        :type root: BSTNode</span>
+<span class="sd">        :return: Height of the given Node</span>
+<span class="sd">        :rtype: int</span>
+
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; bst = BinarySearchTree()</span>
+<span class="sd">            &gt;&gt;&gt; bst.insert(20)</span>
+<span class="sd">            &gt;&gt;&gt; bst.insert(25)</span>
+<span class="sd">            &gt;&gt;&gt; bst.insert(50)</span>
+<span class="sd">            &gt;&gt;&gt; print(bst.height(bst.root))</span>
+<span class="sd">            2</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">root</span><span class="o">.</span><span class="n">left</span> <span class="o">==</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">root</span><span class="o">.</span><span class="n">right</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">elif</span> <span class="n">root</span><span class="o">.</span><span class="n">right</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">root</span><span class="o">.</span><span class="n">left</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">),</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">))</span></div></div>
+
+
+<span class="c1"># --------------------------------- Suffix Trie --------------------------------</span>
+
+<div class="viewcode-block" id="Trie"><a class="viewcode-back" href="../DSA.html#DSA.Trie">[docs]</a><span class="k">class</span> <span class="nc">Trie</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    | *The Trie Data Structure*</span>
+<span class="sd">    | A Trie is used for *text processing*. It is an efficient information</span>
+<span class="sd">      retrieval data structure which can store strings and search them optimally</span>
+<span class="sd">    | Available functions on a Trie object are -</span>
+<span class="sd">        </span>
+<span class="sd">    - ``insert``  - Insert a new string into Trie</span>
+<span class="sd">    - ``find`` - Find a particular string in Trie</span>
+<span class="sd">    - ``checkPrefix`` - Check if a given prefix is present in the Trie</span>
+<span class="sd">    - ``countPrefix`` -  Count number of Prefix of a string in the Trie</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Trie.__init__"><a class="viewcode-back" href="../DSA.html#DSA.Trie.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Constructor to construct a new empty Trie object</span>
+
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; trie = Trie()</span>
+<span class="sd">            &gt;&gt;&gt; print(trie.T)</span>
+<span class="sd">            {}</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">T</span> <span class="o">=</span> <span class="p">{}</span></div>
+    
+<div class="viewcode-block" id="Trie.find"><a class="viewcode-back" href="../DSA.html#DSA.Trie.find">[docs]</a>    <span class="k">def</span> <span class="nf">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Find a particular string in Trie</span>
+
+<span class="sd">        :param root: Trie Node starting from which it will find</span>
+<span class="sd">        :param c: Text which is to be found</span>
+<span class="sd">        :type root: dict</span>
+<span class="sd">        :type c: str</span>
+
+<span class="sd">        :return: True - If the character is found</span>
+<span class="sd">        :return: False - If the character is not found</span>
+<span class="sd">        :rtype: bool</span>
+
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; trie = Trie()</span>
+<span class="sd">            &gt;&gt;&gt; trie.insert(&quot;I&quot;)</span>
+<span class="sd">            &gt;&gt;&gt; trie.insert(&quot;am&quot;)</span>
+<span class="sd">            &gt;&gt;&gt; trie.insert(&quot;Atishay&quot;)</span>
+<span class="sd">            &gt;&gt;&gt; trie.find(trie.T,&quot;Atishay&quot;)</span>
+<span class="sd">            True</span>
+<span class="sd">            &gt;&gt;&gt; trie.find(trie.T,&quot;ABCD&quot;)</span>
+<span class="sd">            False</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">currNode</span> <span class="o">=</span> <span class="n">root</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">currNode</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">currNode</span> <span class="o">=</span> <span class="n">currNode</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">return</span> <span class="kc">True</span></div>
+    
+<div class="viewcode-block" id="Trie.insert"><a class="viewcode-back" href="../DSA.html#DSA.Trie.insert">[docs]</a>    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Insert a new word into Trie</span>
+
+<span class="sd">        :param s: The string of word that is to be inserted</span>
+<span class="sd">        :type s: str</span>
+
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; trie = Trie()</span>
+<span class="sd">            &gt;&gt;&gt; trie.insert(&quot;I&quot;)</span>
+<span class="sd">            &gt;&gt;&gt; trie.insert(&quot;am&quot;)</span>
+<span class="sd">            &gt;&gt;&gt; trie.insert(&quot;Atishay&quot;)</span>
+<span class="sd">            &gt;&gt;&gt; print(trie.T[&quot;a&quot;])</span>
+<span class="sd">            {&#39;#&#39;: 1, &#39;m&#39;: {&#39;#&#39;: 1}}</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">T</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
+                <span class="n">root</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">root</span> <span class="o">=</span> <span class="n">root</span><span class="p">[</span><span class="n">c</span><span class="p">]</span>
+            <span class="n">root</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">root</span><span class="p">[</span><span class="s1">&#39;#&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span></div>
+    
+<div class="viewcode-block" id="Trie.checkPrefix"><a class="viewcode-back" href="../DSA.html#DSA.Trie.checkPrefix">[docs]</a>    <span class="k">def</span> <span class="nf">checkPrefix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Function to check if a given prefix is present in the Trie</span>
+
+<span class="sd">        :param s: The prefix which is to be searched in the Trie</span>
+<span class="sd">        :type s: str</span>
+<span class="sd">        :return: True - If the prefix is found</span>
+<span class="sd">        :return: False - If the prefix is not found</span>
+<span class="sd">        :rtype: bool</span>
+
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; trie = Trie()</span>
+<span class="sd">            &gt;&gt;&gt; trie.insert(&quot;I&quot;)</span>
+<span class="sd">            &gt;&gt;&gt; trie.insert(&quot;am&quot;)</span>
+<span class="sd">            &gt;&gt;&gt; trie.insert(&quot;Atishay&quot;)</span>
+<span class="sd">            &gt;&gt;&gt; trie.checkPrefix(&quot;Ati&quot;)</span>
+<span class="sd">            True</span>
+<span class="sd">            &gt;&gt;&gt; trie.checkPrefix(&quot;IIT&quot;)</span>
+<span class="sd">            False</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">T</span>
+        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">char</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">char</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">root</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">idx</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>    
+                    <span class="n">root</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;#&#39;</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">root</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">elif</span> <span class="n">root</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;#&#39;</span> <span class="ow">or</span> <span class="n">idx</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">True</span>
+            <span class="n">root</span> <span class="o">=</span> <span class="n">root</span><span class="p">[</span><span class="n">char</span><span class="p">]</span>
+        <span class="k">return</span> <span class="kc">False</span></div>
+    
+<div class="viewcode-block" id="Trie.countPrefix"><a class="viewcode-back" href="../DSA.html#DSA.Trie.countPrefix">[docs]</a>    <span class="k">def</span> <span class="nf">countPrefix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Count number of Prefix of a string in the Trie</span>
+
+<span class="sd">        :param s: String whose counts of prefix is to be counted</span>
+<span class="sd">        :type s: str</span>
+<span class="sd">        :return: Number of counts of Prefix</span>
+<span class="sd">        :rtype: int</span>
+
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; trie = Trie()</span>
+<span class="sd">            &gt;&gt;&gt; trie.insert(&quot;English&quot;)</span>
+<span class="sd">            &gt;&gt;&gt; trie.insert(&quot;England&quot;)</span>
+<span class="sd">            &gt;&gt;&gt; trie.insert(&quot;Engineer&quot;)</span>
+<span class="sd">            &gt;&gt;&gt; trie.countPrefix(&quot;Eng&quot;)</span>
+<span class="sd">            3</span>
+<span class="sd">            &gt;&gt;&gt; trie.countPrefix(&quot;Engla&quot;)</span>
+<span class="sd">            1</span>
+<span class="sd">            &gt;&gt;&gt; trie.countPrefix(&quot;Engo&quot;)</span>
+<span class="sd">            0</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">T</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
+                <span class="n">root</span> <span class="o">=</span> <span class="n">root</span><span class="p">[</span><span class="n">c</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="k">break</span>
+        <span class="k">if</span> <span class="n">found</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">root</span><span class="p">[</span><span class="s1">&#39;#&#39;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="mi">0</span></div></div>
+
+
+<span class="c1"># -------------------------------------- Heap --------------------------------------</span>
+
+<div class="viewcode-block" id="Heap"><a class="viewcode-back" href="../DSA.html#DSA.Heap">[docs]</a><span class="k">class</span> <span class="nc">Heap</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This class implements the *Heap Data Structure*.</span>
+<span class="sd">    A Heap is a special *Tree-based* data structure in which the tree is a Binary Tree that</span>
+<span class="sd">    stores priorities (or priority-element) pairs at nodes. It has following properties :</span>
+
+<span class="sd">    1. **Structural Property** : All levels except last are full. Last level is left-filled.</span>
+<span class="sd">    2. **Heap Property** : Priority of node is at least as large as that of its parent.</span>
+
+<span class="sd">    Operations/Member Functions of Heap Data Structure include:</span>
+
+<span class="sd">    - **Heapify** : A process of creating a heap from an array.</span>
+<span class="sd">    - **Insertion** : Process to insert an element in existing heap time complexity *O(log N)*.</span>
+<span class="sd">    - **Deletion** : Deleting the top element of the heap or the highest priority element, and then organizing the heap and returning the element with time complexity *O(log N)*.</span>
+<span class="sd">    - **Peek** : To check or find the most prior element in the heap, (max or min element for max and min heap).</span>
+
+<span class="sd">    :param cap: Maximum Capacity of the Heap created</span>
+<span class="sd">    :type cap: int</span>
+<span class="sd">    :param H: Array being used for storing Heap</span>
+<span class="sd">    :type H: list</span>
+<span class="sd">    :param n: Number of elements in current Heap</span>
+<span class="sd">    :param M: Maximum Capacity of Heap</span>
+<span class="sd">    :type M: int</span>
+<span class="sd">    :type n: int</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Heap.__init__"><a class="viewcode-back" href="../DSA.html#DSA.Heap.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cap</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Contructor to initialize a new Heap object</span>
+
+<span class="sd">        :param cap: Maximum Capacity of the Heap to be constructed</span>
+<span class="sd">        :type cap: int</span>
+<span class="sd">        </span>
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; heap = Heap(10)</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.M)</span>
+<span class="sd">            10</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.H)</span>
+<span class="sd">            []</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.n)</span>
+<span class="sd">            0</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">M</span> <span class="o">=</span> <span class="n">cap</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">H</span> <span class="o">=</span> <span class="p">[]</span></div>
+    
+<div class="viewcode-block" id="Heap.parent"><a class="viewcode-back" href="../DSA.html#DSA.Heap.parent">[docs]</a>    <span class="k">def</span> <span class="nf">parent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Function to get the Parent Node&#39;s Index of an element in Heap</span>
+
+<span class="sd">        :param i: Index of element whose Parent Node is to be found</span>
+<span class="sd">        :type i: int</span>
+<span class="sd">        :return: Index of the Parent Node</span>
+<span class="sd">        :rtype: int</span>
+<span class="sd">        </span>
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; heap = Heap(10)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(23)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(45)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(11)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(56)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(5)</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.parent(3))</span>
+<span class="sd">            1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span></div>
+    
+<div class="viewcode-block" id="Heap.left"><a class="viewcode-back" href="../DSA.html#DSA.Heap.left">[docs]</a>    <span class="k">def</span> <span class="nf">left</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Function to get the Left child&#39;s Index of a Node in Heap</span>
+
+<span class="sd">        :param i: Index of element whose Left child is to be found</span>
+<span class="sd">        :type i: int</span>
+<span class="sd">        :return: Index of the Left child</span>
+<span class="sd">        :rtype: int</span>
+
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; heap = Heap(10)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(23)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(45)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(11)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(56)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(5)</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.left(1))</span>
+<span class="sd">            3</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span></div>
+    
+<div class="viewcode-block" id="Heap.right"><a class="viewcode-back" href="../DSA.html#DSA.Heap.right">[docs]</a>    <span class="k">def</span> <span class="nf">right</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Function to get the Right child&#39;s Index of a Node in Heap</span>
+
+<span class="sd">        :param i: Index of element whose Right child is to be found</span>
+<span class="sd">        :type i: int</span>
+<span class="sd">        :return: Index of the Right child</span>
+<span class="sd">        :rtype: int</span>
+
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; heap = Heap(10)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(23)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(45)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(11)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(56)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(5)</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.right(1))</span>
+<span class="sd">            4</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Heap.insert"><a class="viewcode-back" href="../DSA.html#DSA.Heap.insert">[docs]</a>    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Inserts a new Node into the Heap with a given value</span>
+
+<span class="sd">        :param val: The value to be stored in the New Node</span>
+<span class="sd">        :type val: auto</span>
+<span class="sd">        </span>
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; heap = Heap(10)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(23)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(45)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(11)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(56)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(5)</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.H)</span>
+<span class="sd">            [5, 11, 23, 56, 45]</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.n)</span>
+<span class="sd">            5</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">M</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">while</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="p">(</span><span class="n">i</span><span class="p">)],</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="p">(</span><span class="n">i</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Heap.min"><a class="viewcode-back" href="../DSA.html#DSA.Heap.min">[docs]</a>    <span class="k">def</span> <span class="nf">min</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        | Function to get the Minimum value stored in the Heap.</span>
+<span class="sd">        | Since Heap is implemented in such a way that the starting Node </span>
+<span class="sd">          has the minimum value according to the definition of Heap, </span>
+<span class="sd">          the minimum value to be returned is simply the value at </span>
+<span class="sd">          **first index** of the Heap.</span>
+<span class="sd">        | `If Heap has zero elements, then -1 is returned`</span>
+
+<span class="sd">        :return: Minimum value stored in Heap</span>
+<span class="sd">        :rtype: auto</span>
+<span class="sd">        </span>
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; heap = Heap(10)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(23)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(45)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(11)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(56)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(9)</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.H)</span>
+<span class="sd">            [9, 11, 23, 56, 45]</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.min())</span>
+<span class="sd">            9</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span></div>
+    
+<div class="viewcode-block" id="Heap.Heapify"><a class="viewcode-back" href="../DSA.html#DSA.Heap.Heapify">[docs]</a>    <span class="k">def</span> <span class="nf">Heapify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        `Heapify` is a process of creating a Heap from a list of elements or Restoring </span>
+<span class="sd">        the Heap property if it is violated at any Node. Heapify at index `i` traces a path down the tree.</span>
+<span class="sd">        All elements on path have lower priority than their siblings. All elements on this path are </span>
+<span class="sd">        moved up and element at index `i` is rearranged with them. This establishes Heap Property correctly.</span>
+
+<span class="sd">        :param root: Index of Root Node, starting from which Heap will be made</span>
+<span class="sd">        :type root: int</span>
+<span class="sd">        </span>
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; heap = Heap(10)</span>
+<span class="sd">            &gt;&gt;&gt; heap.H = [23,15,11,20,27]</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.H)</span>
+<span class="sd">            [23, 15, 11, 20, 27]</span>
+<span class="sd">            &gt;&gt;&gt; heap.n = 5</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.n)</span>
+<span class="sd">            5</span>
+<span class="sd">            &gt;&gt;&gt; heap.Heapify(0)</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.H)</span>
+<span class="sd">            [11, 15, 23, 20, 27]</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">root</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="n">root</span><span class="p">]):</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">l</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">r</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="n">s</span><span class="p">]):</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">r</span>
+        <span class="k">if</span> <span class="n">s</span> <span class="o">!=</span> <span class="n">root</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="n">root</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="n">s</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="n">root</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">Heapify</span><span class="p">(</span><span class="n">s</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Heap.deleteMin"><a class="viewcode-back" href="../DSA.html#DSA.Heap.deleteMin">[docs]</a>    <span class="k">def</span> <span class="nf">deleteMin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Deletes the Minimum Element. Notice that after deleting the </span>
+<span class="sd">        minimum element (`which was at the top`), there might bacome violation</span>
+<span class="sd">        of heap property in some Nodes. Therefore, this function also rearranges</span>
+<span class="sd">        the Heap accordingly using ``Heapify``</span>
+<span class="sd">        </span>
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; heap = Heap(10)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(23)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(45)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(11)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(56)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(9)</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.H)</span>
+<span class="sd">            [9, 11, 23, 56, 45]</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.n)</span>
+<span class="sd">            5</span>
+<span class="sd">            &gt;&gt;&gt; heap.deleteMin()</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.H)</span>
+<span class="sd">            [11, 45, 23, 56]</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.n)</span>
+<span class="sd">            4</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">H</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">Heapify</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></div></div>
+
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">outlabq2</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">q2</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, 210050026.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

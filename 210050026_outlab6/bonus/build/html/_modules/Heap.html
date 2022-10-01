@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heap &mdash; outlabq2  documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> outlabq2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">bonus</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">outlabq2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Module code</a> &raquo;</li>
+      <li>Heap</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for Heap</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -------------------------------------- Heap --------------------------------------</span>
+
+<div class="viewcode-block" id="Heap"><a class="viewcode-back" href="../Heap.html#Heap.Heap">[docs]</a><span class="k">class</span> <span class="nc">Heap</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This class implements the *Heap Data Structure*.</span>
+<span class="sd">    A Heap is a special *Tree-based* data structure in which the tree is a Binary Tree that</span>
+<span class="sd">    stores priorities (or priority-element) pairs at nodes. It has following properties :</span>
+
+<span class="sd">    1. **Structural Property** : All levels except last are full. Last level is left-filled.</span>
+<span class="sd">    2. **Heap Property** : Priority of node is at least as large as that of its parent.</span>
+
+<span class="sd">    Operations/Member Functions of Heap Data Structure include:</span>
+
+<span class="sd">    - **Heapify** : A process of creating a heap from an array.</span>
+<span class="sd">    - **Insertion** : Process to insert an element in existing heap time complexity *O(log N)*.</span>
+<span class="sd">    - **Deletion** : Deleting the top element of the heap or the highest priority element, and then organizing the heap and returning the element with time complexity *O(log N)*.</span>
+<span class="sd">    - **Peek** : To check or find the most prior element in the heap, (max or min element for max and min heap).</span>
+
+<span class="sd">    :param cap: Maximum Capacity of the Heap created</span>
+<span class="sd">    :type cap: int</span>
+<span class="sd">    :param H: Array being used for storing Heap</span>
+<span class="sd">    :type H: list</span>
+<span class="sd">    :param n: Number of elements in current Heap</span>
+<span class="sd">    :param M: Maximum Capacity of Heap</span>
+<span class="sd">    :type M: int</span>
+<span class="sd">    :type n: int</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Heap.__init__"><a class="viewcode-back" href="../Heap.html#Heap.Heap.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cap</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Contructor to initialize a new Heap object</span>
+
+<span class="sd">        :param cap: Maximum Capacity of the Heap to be constructed</span>
+<span class="sd">        :type cap: int</span>
+<span class="sd">        </span>
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; heap = Heap(10)</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.M)</span>
+<span class="sd">            10</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.H)</span>
+<span class="sd">            []</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.n)</span>
+<span class="sd">            0</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">M</span> <span class="o">=</span> <span class="n">cap</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">H</span> <span class="o">=</span> <span class="p">[]</span></div>
+    
+<div class="viewcode-block" id="Heap.parent"><a class="viewcode-back" href="../Heap.html#Heap.Heap.parent">[docs]</a>    <span class="k">def</span> <span class="nf">parent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Function to get the Parent Node&#39;s Index of an element in Heap</span>
+
+<span class="sd">        :param i: Index of element whose Parent Node is to be found</span>
+<span class="sd">        :type i: int</span>
+<span class="sd">        :return: Index of the Parent Node</span>
+<span class="sd">        :rtype: int</span>
+<span class="sd">        </span>
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; heap = Heap(10)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(23)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(45)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(11)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(56)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(5)</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.parent(3))</span>
+<span class="sd">            1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span></div>
+    
+<div class="viewcode-block" id="Heap.left"><a class="viewcode-back" href="../Heap.html#Heap.Heap.left">[docs]</a>    <span class="k">def</span> <span class="nf">left</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Function to get the Left child&#39;s Index of a Node in Heap</span>
+
+<span class="sd">        :param i: Index of element whose Left child is to be found</span>
+<span class="sd">        :type i: int</span>
+<span class="sd">        :return: Index of the Left child</span>
+<span class="sd">        :rtype: int</span>
+
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; heap = Heap(10)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(23)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(45)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(11)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(56)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(5)</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.left(1))</span>
+<span class="sd">            3</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span></div>
+    
+<div class="viewcode-block" id="Heap.right"><a class="viewcode-back" href="../Heap.html#Heap.Heap.right">[docs]</a>    <span class="k">def</span> <span class="nf">right</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Function to get the Right child&#39;s Index of a Node in Heap</span>
+
+<span class="sd">        :param i: Index of element whose Right child is to be found</span>
+<span class="sd">        :type i: int</span>
+<span class="sd">        :return: Index of the Right child</span>
+<span class="sd">        :rtype: int</span>
+
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; heap = Heap(10)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(23)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(45)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(11)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(56)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(5)</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.right(1))</span>
+<span class="sd">            4</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Heap.insert"><a class="viewcode-back" href="../Heap.html#Heap.Heap.insert">[docs]</a>    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Inserts a new Node into the Heap with a given value</span>
+
+<span class="sd">        :param val: The value to be stored in the New Node</span>
+<span class="sd">        :type val: auto</span>
+<span class="sd">        </span>
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; heap = Heap(10)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(23)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(45)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(11)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(56)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(5)</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.H)</span>
+<span class="sd">            [5, 11, 23, 56, 45]</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.n)</span>
+<span class="sd">            5</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">M</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">while</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="p">(</span><span class="n">i</span><span class="p">)],</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="p">(</span><span class="n">i</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Heap.min"><a class="viewcode-back" href="../Heap.html#Heap.Heap.min">[docs]</a>    <span class="k">def</span> <span class="nf">min</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        | Function to get the Minimum value stored in the Heap.</span>
+<span class="sd">        | Since Heap is implemented in such a way that the starting Node </span>
+<span class="sd">          has the minimum value according to the definition of Heap, </span>
+<span class="sd">          the minimum value to be returned is simply the value at </span>
+<span class="sd">          **first index** of the Heap.</span>
+<span class="sd">        | `If Heap has zero elements, then -1 is returned`</span>
+
+<span class="sd">        :return: Minimum value stored in Heap</span>
+<span class="sd">        :rtype: auto</span>
+<span class="sd">        </span>
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; heap = Heap(10)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(23)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(45)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(11)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(56)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(9)</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.H)</span>
+<span class="sd">            [9, 11, 23, 56, 45]</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.min())</span>
+<span class="sd">            9</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span></div>
+    
+<div class="viewcode-block" id="Heap.Heapify"><a class="viewcode-back" href="../Heap.html#Heap.Heap.Heapify">[docs]</a>    <span class="k">def</span> <span class="nf">Heapify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        `Heapify` is a process of creating a Heap from a list of elements or Restoring </span>
+<span class="sd">        the Heap property if it is violated at any Node. Heapify at index `i` traces a path down the tree.</span>
+<span class="sd">        All elements on path have lower priority than their siblings. All elements on this path are </span>
+<span class="sd">        moved up and element at index `i` is rearranged with them. This establishes Heap Property correctly.</span>
+
+<span class="sd">        :param root: Index of Root Node, starting from which Heap will be made</span>
+<span class="sd">        :type root: int</span>
+<span class="sd">        </span>
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; heap = Heap(10)</span>
+<span class="sd">            &gt;&gt;&gt; heap.H = [23,15,11,20,27]</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.H)</span>
+<span class="sd">            [23, 15, 11, 20, 27]</span>
+<span class="sd">            &gt;&gt;&gt; heap.n = 5</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.n)</span>
+<span class="sd">            5</span>
+<span class="sd">            &gt;&gt;&gt; heap.Heapify(0)</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.H)</span>
+<span class="sd">            [11, 15, 23, 20, 27]</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">root</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="n">root</span><span class="p">]):</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">l</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">r</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="n">s</span><span class="p">]):</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">r</span>
+        <span class="k">if</span> <span class="n">s</span> <span class="o">!=</span> <span class="n">root</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="n">root</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="n">s</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="n">root</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">Heapify</span><span class="p">(</span><span class="n">s</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Heap.deleteMin"><a class="viewcode-back" href="../Heap.html#Heap.Heap.deleteMin">[docs]</a>    <span class="k">def</span> <span class="nf">deleteMin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Deletes the Minimum Element. Notice that after deleting the </span>
+<span class="sd">        minimum element (`which was at the top`), there might bacome violation</span>
+<span class="sd">        of heap property in some Nodes. Therefore, this function also rearranges</span>
+<span class="sd">        the Heap accordingly using ``Heapify``</span>
+<span class="sd">        </span>
+<span class="sd">        :Example:</span>
+<span class="sd">            &gt;&gt;&gt; heap = Heap(10)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(23)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(45)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(11)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(56)</span>
+<span class="sd">            &gt;&gt;&gt; heap.insert(9)</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.H)</span>
+<span class="sd">            [9, 11, 23, 56, 45]</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.n)</span>
+<span class="sd">            5</span>
+<span class="sd">            &gt;&gt;&gt; heap.deleteMin()</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.H)</span>
+<span class="sd">            [11, 45, 23, 56]</span>
+<span class="sd">            &gt;&gt;&gt; print(heap.n)</span>
+<span class="sd">            4</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">H</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">Heapify</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, 210050026.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

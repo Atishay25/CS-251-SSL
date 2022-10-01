@@ -1,0 +1,29 @@
+Name 	    : Atishay Jain
+Roll Number : 210050026
+Outlab 6    : Doxygen & Sphinx
+
+References  :
+
+https://github.com/sphinx-doc/sphinx/issues/4961
+
+https://pypi.org/project/sphinx-rtd-theme/
+
+https://www.geeksforgeeks.org/import-module-python/
+
+https://bashtage.github.io/sphinx-material/rst-cheatsheet/rst-cheatsheet.html
+
+https://stackoverflow.com/questions/58189699/use-sphinx-doctest-with-example
+
+https://www.geeksforgeeks.org/what-is-linked-list/
+
+https://stackoverflow.com/questions/12039633/how-to-autodoc-a-function-inside-a-method-in-sphinx
+
+https://github.com/sphinx-doc/sphinx/issues/4479
+
+https://stackoverflow.com/questions/45880348/how-to-remove-the-cause-of-an-unexpected-indentation-warning-when-generating-cod
+
+https://stackoverflow.com/questions/54001054/force-a-new-line-in-sphinx-text
+
+https://stackoverflow.com/questions/5599254/how-to-use-sphinxs-autodoc-to-document-a-classs-init-self-method
+
+https://blog.sandipb.net/2016/10/10/documenting-both-class-and-constructor-in-sphinx/

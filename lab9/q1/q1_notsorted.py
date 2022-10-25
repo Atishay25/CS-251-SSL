@@ -27,10 +27,13 @@ def auth_moodle(data: dict) -> requests.Session():
     r_2 = s.post(url=url_domain + "/login/index.php", data=payload)
     soup = BeautifulSoup(r_2.content, 'html5lib')
     course_link = ""
-    nav = soup.find('nav', attrs={"aria-label":"Site"})
-    for button in nav.find_all('a'):
-        if "CS 251-2022-1" in button.getText().strip():
-            course_link = course_link + button.get('href')
+    for i in soup.find_all('a'):
+        if "CS 251-2022-1" in i.getText():
+            print(i.get('href'))
+            course_link += (i.get('href'))
+            break
+    #if len(course_link)==0:
+    #    raise Exception("CS 251-2022-1 course is not present")
     r_3 = s.post(course_link, data=payload)
     soup1 = BeautifulSoup(r_3.content, 'html5lib')
     annoucement = ""
@@ -43,6 +46,20 @@ def auth_moodle(data: dict) -> requests.Session():
     Anntable = soup2.find_all('tr', attrs={'class':'discussion subscribed'})
     for ann in Anntable:
         col = ann.find('th')
+        #for i in col:
+        #    print(i)
+        #    print("-------------------------------------------------------------------------------------------")
+
+        ''' CHECKING TA NAME!
+        TA_name = ""
+        started_by = (col[1].getText()).split()[:len((col[1].getText()).split())-3]
+        for i in started_by[:-1]:
+            TA_name += i + " "
+        TA_name += started_by[-1]
+        if TA_name == ta_name:
+            print(TA_name)
+        else:
+            continue'''
         ann_link = col.find('a').get('href')
         r_5 = s.post(ann_link, data=payload)
         soup3 = BeautifulSoup(r_5.content, 'html5lib')

@@ -1,0 +1,22 @@
+Name        - Atishay Jain
+Roll Number - 210050026
+CS251 - Outlab 9
+
+References -
+https://www.geeksforgeeks.org/precision-handling-python/
+https://stackoverflow.com/questions/65330575/how-to-get-datetime-with-beautifulsoup
+https://www.google.com/search?q=order+by+col1+%2C+if+col1+is+same+then+by+col2+in+sql&rlz=1C1GGRV_enIN1005IN1005&ei=djdYY8PoNJOUseMP5cO9sAk&ved=0ahUKEwjD-8Wijfz6AhUTSmwGHeVhD5YQ4dUDCA8&uact=5&oq=order+by+col1+%2C+if+col1+is+same+then+by+col2+in+sql&gs_lcp=Cgdnd3Mtd2l6EAMyBwgAEB4QogQyBwgAEB4QogQyBwgAEB4QogQ6CwgAEI8BEI8BEOoCOg4ILhCPARCPARDUAhDqAjoLCC4QjwEQjwEQ6gI6BQgAEJECOgsIABCABBCxAxCDAToRCC4QgAQQsQMQgwEQxwEQ0QM6CAgAEIAEELEDOg4IABCABBCxAxCDARDlBDoICAAQgAQQ5QQ6BQgAEIAEOgQIABBDOgcIABCxAxBDOggIABCxAxCRAjoICAAQgAQQyQM6BggAEBYQHjoKCAAQFhAeEA8QCjoFCAAQhgM6BQghEKABOgUIABCiBDoECCEQFUoECEEYAEoECEYYAFCsDFiub2CEcWgCcAB4AYAB6wGIAbw1kgEGMC41MC4ymAEAoAEBsAEKwAEB&sclient=gws-wiz
+https://www.wideskills.com/sql/sql-order-clause
+https://community.oracle.com/tech/developers/discussion/4297042/easy-way-to-filter-to-one-row-in-order-of-value-preference
+https://stackoverflow.com/questions/396748/ordering-by-the-order-of-values-in-a-sql-in-clause
+https://stackoverflow.com/questions/29232060/sql-order-by-custom-preference-list
+https://www.w3resource.com/sqlite/core-functions-round.php#:~:text=SELECT%20round(%2D4.535%2C2,Here%20is%20the%20result.&text=%2D%2D%2D%20%2D4.54-,The%20above%20SQLite%20statement%20will%20round%20the%20given%20number,up%20to%202%20decimal%20places.
+https://www.w3schools.com/sql/sql_case.asp
+https://stackoverflow.com/questions/14581259/using-case-with-aggregate-function-group-by-clauses
+https://stackoverflow.com/questions/54120610/updating-column-in-table-with-sum-of-another-table
+https://www.guru99.com/sql-server-case.html
+https://www.guru99.com/sql-server-case.html
+https://www.w3resource.com/sql/update-statement/update-columns-using-sum-function-and-groupby.php
+https://stackoverflow.com/questions/54120610/updating-column-in-table-with-sum-of-another-table
+https://stackoverflow.com/questions/32761913/shutdown-an-simplexmlrpcserver-server-in-python
+https://stackoverflow.com/questions/23102833/how-to-scrape-a-website-which-requires-login-using-python-and-beautifulsoup

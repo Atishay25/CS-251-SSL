@@ -1,0 +1,28 @@
+Name - Atishay Jain
+Roll Number - 210050026
+CS251 Inlab9
+
+References -
+https://stackoverflow.com/questions/31474544/how-to-send-out-of-ping-to-dev-null
+https://www.javatpoint.com/sqlite-select-query
+https://www.sqlitetutorial.net/sqlite-where/#:~:text=First%2C%20check%20the%20table%20in,columns%20in%20the%20SELECT%20clause.
+https://www.geeksforgeeks.org/ping-command-in-linux-with-examples/
+https://sqlite.org/forum/info/074b3afdac6987cc
+https://stackoverflow.com/questions/54351740/how-can-i-use-f-string-with-a-variable-not-with-a-string-literal
+https://www.techonthenet.com/sqlite/comparison_operators.php
+https://stackoverflow.com/questions/54023892/how-can-i-successfully-pass-a-variable-into-my-sqlite-select-statement
+https://www.javatpoint.com/sqlite-group-by-clause
+https://www.geeksforgeeks.org/how-to-import-a-csv-file-into-a-sqlite-database-table-using-python/
+https://stackoverflow.com/questions/14947916/import-csv-to-sqlite
+https://www.javatpoint.com/sqlite-create-table
+https://www.sqlitetutorial.net/sqlite-show-tables/
+https://www.geeksforgeeks.org/python-split-multiple-characters-from-string/#:~:text=Method%201%3A%20Split%20multiple%20characters,in%20order%20to%20do%20this.
+https://www.geeksforgeeks.org/python-sort-python-dictionaries-by-key-or-value/#:~:text=Need%20for%20Sorting%20in%20Dictionary&text=First%2C%20sort%20the%20keys%20alphabetically,)%20%3A%20(v%2C%20k))
+https://www.geeksforgeeks.org/command-line-arguments-in-python/
+https://www.geeksforgeeks.org/python-sort-dictionary-by-values-and-keys/
+https://pytutorial.com/beautifulsoup-attribute
+https://www.geeksforgeeks.org/difference-between-find-and-find_all-in-beautifulsoup-python/
+https://www.geeksforgeeks.org/how-to-extract-a-div-tag-and-its-contents-by-id-with-beautifulsoup/
+https://towardsdatascience.com/web-scraping-scraping-table-data-1665b6b2271c
+https://www.geeksforgeeks.org/python-beautifulsoup-find-all-class/
+https://www.pluralsight.com/guides/extracting-data-html-beautifulsoup

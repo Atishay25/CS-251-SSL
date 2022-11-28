@@ -1,0 +1,12 @@
+Name           - Atishay Jain
+Roll Number    - 210050026
+CS251 Outlab 8 - Python Basics part 2
+
+References     -
+https://www.w3schools.com/python/python_datatypes.asp
+https://stackabuse.com/python-check-if-variable-is-a-number/
+https://stackoverflow.com/questions/24868733/how-to-access-a-module-from-outside-your-file-folder-in-python
+https://www.tutorialcup.com/leetcode-solutions/minimum-score-triangulation-of-polygon-leetcode-solution.htm
+https://stackoverflow.com/questions/22564000/best-way-to-initialize-a-static-list-in-a-python-module
+https://www.tutorialspoint.com/minimum-score-triangulation-of-polygon-in-cplusplus
+https://sparkbyexamples.com/pandas/pandas-get-column-average-mean/#:~:text=To%20get%20column%20average%20or%20mean%20from%20pandas%20DataFrame%20use,values%20for%20the%20requested%20axis.
